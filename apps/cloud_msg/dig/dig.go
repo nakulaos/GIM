@@ -1,11 +1,11 @@
 package dig
 
 import (
+	"GIM/apps/cloud_msg/internal/config"
+	"GIM/apps/cloud_msg/internal/server"
+	"GIM/apps/cloud_msg/internal/server/cloud_msg"
+	"GIM/apps/cloud_msg/internal/service"
 	"go.uber.org/dig"
-	"lark/apps/cloud_msg/internal/config"
-	"lark/apps/cloud_msg/internal/server"
-	"lark/apps/cloud_msg/internal/server/cloud_msg"
-	"lark/apps/cloud_msg/internal/service"
 	"log"
 )
 

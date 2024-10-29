@@ -1,12 +1,12 @@
 package main
 
 import (
-	"lark/apps/lbs/dig"
-	"lark/apps/lbs/internal/config"
-	"lark/pkg/commands"
-	"lark/pkg/common/xmongo"
-	"lark/pkg/common/xmysql"
-	"lark/pkg/common/xredis"
+	"GIM/apps/lbs/dig"
+	"GIM/apps/lbs/internal/config"
+	"GIM/pkg/commands"
+	"GIM/pkg/common/xmongo"
+	"GIM/pkg/common/xmysql"
+	"GIM/pkg/common/xredis"
 )
 
 func init() {

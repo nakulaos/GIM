@@ -1,9 +1,9 @@
 package okafka
 
 import (
+	"GIM/pkg/common/xlog"
 	"github.com/IBM/sarama"
 	"google.golang.org/protobuf/proto"
-	"lark/pkg/common/xlog"
 )
 
 type Producer struct {

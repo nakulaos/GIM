@@ -1,10 +1,10 @@
 package ctrl_auth
 
 import (
+	"GIM/apps/interfaces/internal/config"
+	"GIM/apps/interfaces/internal/service/svc_auth"
+	"GIM/pkg/common/xoauth2"
 	"golang.org/x/oauth2"
-	"lark/apps/interfaces/internal/config"
-	"lark/apps/interfaces/internal/service/svc_auth"
-	"lark/pkg/common/xoauth2"
 )
 
 type AuthCtrl struct {

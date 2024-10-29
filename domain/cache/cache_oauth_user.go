@@ -1,9 +1,9 @@
 package cache
 
 import (
-	"lark/domain/pdo"
-	"lark/pkg/constant"
-	"lark/pkg/utils"
+	"GIM/domain/pdo"
+	"GIM/pkg/constant"
+	"GIM/pkg/utils"
 )
 
 type OauthUserCache interface {

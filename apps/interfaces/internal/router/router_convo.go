@@ -1,10 +1,10 @@
 package router
 
 import (
+	"GIM/apps/interfaces/dig"
+	"GIM/apps/interfaces/internal/ctrl/ctrl_convo"
+	"GIM/apps/interfaces/internal/service/svc_convo"
 	"github.com/gin-gonic/gin"
-	"lark/apps/interfaces/dig"
-	"lark/apps/interfaces/internal/ctrl/ctrl_convo"
-	"lark/apps/interfaces/internal/service/svc_convo"
 )
 
 func registerConvoRouter(group *gin.RouterGroup) {

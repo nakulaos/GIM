@@ -1,11 +1,11 @@
 package svc_chat_member
 
 import (
+	"GIM/apps/interfaces/internal/dto/dto_chat_member"
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/proto/pb_chat_member"
+	"GIM/pkg/xhttp"
 	"github.com/jinzhu/copier"
-	"lark/apps/interfaces/internal/dto/dto_chat_member"
-	"lark/pkg/common/xlog"
-	"lark/pkg/proto/pb_chat_member"
-	"lark/pkg/xhttp"
 )
 
 func (s *chatMemberService) GroupChatList(params *dto_chat_member.GroupChatListReq, uid int64) (resp *xhttp.Resp) {

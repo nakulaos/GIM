@@ -1,13 +1,13 @@
 package repo
 
 import (
+	"GIM/domain/do"
+	"GIM/domain/po"
+	"GIM/pkg/common/xmysql"
+	"GIM/pkg/entity"
+	"GIM/pkg/proto/pb_chat_member"
+	"GIM/pkg/proto/pb_convo"
 	"gorm.io/gorm"
-	"lark/domain/do"
-	"lark/domain/po"
-	"lark/pkg/common/xmysql"
-	"lark/pkg/entity"
-	"lark/pkg/proto/pb_chat_member"
-	"lark/pkg/proto/pb_convo"
 )
 
 type ChatMemberRepository interface {
@@ -143,6 +143,7 @@ func (r *chatMemberRepository) GroupChatBasicInfoList(w *entity.MysqlQuery) (lis
 }
 
 func (r *chatMemberRepository) ConvoChatSeqList(q *entity.MysqlQuery) (list []*pb_convo.ConvoChatSeq, err error) {
+	// 返回满足条件的chat_id,当前用户读到的seq_id,当前chat的最新seq_id,最新消息时间
 	list = make([]*pb_convo.ConvoChatSeq, 0)
 	db := xmysql.GetDB()
 	err = db.Table("chat_members m").

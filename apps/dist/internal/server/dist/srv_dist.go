@@ -1,13 +1,13 @@
 package dist
 
 import (
+	"GIM/apps/dist/internal/config"
+	"GIM/apps/dist/internal/service"
+	"GIM/pkg/common/xgrpc"
+	"GIM/pkg/common/xmonitor"
+	"GIM/pkg/proto/pb_dist"
 	"google.golang.org/grpc"
 	"io"
-	"lark/apps/dist/internal/config"
-	"lark/apps/dist/internal/service"
-	"lark/pkg/common/xgrpc"
-	"lark/pkg/common/xmonitor"
-	"lark/pkg/proto/pb_dist"
 )
 
 type DistServer interface {

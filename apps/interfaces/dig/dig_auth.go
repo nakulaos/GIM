@@ -1,7 +1,7 @@
 package dig
 
 import (
-	"lark/apps/interfaces/internal/service/svc_auth"
+	"GIM/apps/interfaces/internal/service/svc_auth"
 )
 
 func init() {

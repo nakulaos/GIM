@@ -7,12 +7,12 @@
 package pb_dist
 
 import (
+	_ "GIM/pkg/proto/pb_chat"
+	pb_enum "GIM/pkg/proto/pb_enum"
+	_ "GIM/pkg/proto/pb_invite"
+	pb_msg "GIM/pkg/proto/pb_msg"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
-	_ "lark/pkg/proto/pb_chat"
-	pb_enum "lark/pkg/proto/pb_enum"
-	_ "lark/pkg/proto/pb_invite"
-	pb_msg "lark/pkg/proto/pb_msg"
 	reflect "reflect"
 	sync "sync"
 )

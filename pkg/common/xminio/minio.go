@@ -1,10 +1,10 @@
 package xminio
 
 import (
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/utils"
 	"github.com/minio/minio-go/v7"
 	"github.com/minio/minio-go/v7/pkg/credentials"
-	"lark/pkg/common/xlog"
-	"lark/pkg/utils"
 	"log"
 	"net/url"
 	"time"

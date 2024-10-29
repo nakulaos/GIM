@@ -7,11 +7,11 @@
 package pb_gw
 
 import (
+	pb_enum "GIM/pkg/proto/pb_enum"
+	_ "GIM/pkg/proto/pb_msg"
+	pb_obj "GIM/pkg/proto/pb_obj"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
-	pb_enum "lark/pkg/proto/pb_enum"
-	_ "lark/pkg/proto/pb_msg"
-	pb_obj "lark/pkg/proto/pb_obj"
 	reflect "reflect"
 	sync "sync"
 )

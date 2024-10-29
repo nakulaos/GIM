@@ -1,13 +1,13 @@
 package dig
 
 import (
+	"GIM/apps/msg_history/internal/config"
+	"GIM/apps/msg_history/internal/server"
+	"GIM/apps/msg_history/internal/server/msg_history"
+	"GIM/apps/msg_history/internal/service"
+	"GIM/domain/cache"
+	"GIM/domain/repo"
 	"go.uber.org/dig"
-	"lark/apps/msg_history/internal/config"
-	"lark/apps/msg_history/internal/server"
-	"lark/apps/msg_history/internal/server/msg_history"
-	"lark/apps/msg_history/internal/service"
-	"lark/domain/cache"
-	"lark/domain/repo"
 	"log"
 )
 

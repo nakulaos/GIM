@@ -1,30 +1,39 @@
 package service
 
 import (
+	"GIM/domain/do"
+	"GIM/domain/po"
+	"GIM/pkg/common/xants"
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/common/xmysql"
+	"GIM/pkg/common/xsnowflake"
+	"GIM/pkg/constant"
+	"GIM/pkg/entity"
+	"GIM/pkg/proto/pb_chat_member"
+	"GIM/pkg/proto/pb_enum"
+	"GIM/pkg/proto/pb_invite"
+	"GIM/pkg/proto/pb_mq"
+	"GIM/pkg/proto/pb_msg"
+	"GIM/pkg/proto/pb_user"
+	"GIM/pkg/utils"
 	"context"
 	"github.com/go-sql-driver/mysql"
 	"github.com/spf13/cast"
 	"google.golang.org/protobuf/proto"
 	"gorm.io/gorm"
-	"lark/domain/do"
-	"lark/domain/po"
-	"lark/pkg/common/xants"
-	"lark/pkg/common/xlog"
-	"lark/pkg/common/xmysql"
-	"lark/pkg/common/xsnowflake"
-	"lark/pkg/constant"
-	"lark/pkg/entity"
-	"lark/pkg/proto/pb_chat_member"
-	"lark/pkg/proto/pb_enum"
-	"lark/pkg/proto/pb_invite"
-	"lark/pkg/proto/pb_mq"
-	"lark/pkg/proto/pb_msg"
-	"lark/pkg/proto/pb_user"
-	"lark/pkg/utils"
 	"strconv"
 )
 
 func (s *chatInviteService) ChatInviteHandle(ctx context.Context, req *pb_invite.ChatInviteHandleReq) (resp *pb_invite.ChatInviteHandleResp, _ error) {
+	/*
+		1. 校验邀请
+		2. 重复操作验证
+		3. 更新邀请chat_invite
+		4. 拒绝邀请，直接返回
+		5. 同意邀请,更新数据库chat_member
+		6. 发送消息，私聊成为好友通知和邀请好友通知，群聊加入群通知
+	*/
+
 	resp = new(pb_invite.ChatInviteHandleResp)
 	var (
 		tx           *gorm.DB
@@ -257,13 +266,14 @@ func (s *chatInviteService) acceptInvitation(tx *gorm.DB, invite *po.ChatInvite,
 		for slot, kvs = range memberMaps {
 			terr = s.chatMemberCache.HMSetChatMembers(chat.ChatId, int(slot), kvs)
 			if terr != nil {
+				// 事务失败，消息队列兜底
 				xlog.Warnf("cache chat member failed. err: %s", terr.Error())
 				km = &do.KeyMaps{
 					Key:  chat.ChatId,
 					Maps: kvs,
 					Ex:   slot,
 				}
-				_, _, terr = s.cacheProducer.Push(km, constant.CONST_MSG_KEY_CACHE_AGREE_INVITATION)
+				_, _, terr = s.cacheProducer.Push(km, constant.CONST_MSG_KEY_CACHE_AGREE_INVITATION+utils.GetChatPartition(chat.ChatId))
 				if terr != nil {
 					xlog.Errorf("push chat member cache message failed. err:%s,chatId:%v,kvs:%v", terr.Error(), chat.ChatId, kvs)
 				}
@@ -344,10 +354,10 @@ func (s *chatInviteService) addedContactMessage(chat *po.Chat, invite *po.ChatIn
 		inbox = &pb_mq.InboxMessage{
 			Topic:    pb_enum.TOPIC_CHAT,
 			SubTopic: pb_enum.SUB_TOPIC_CHAT_MSG,
-			Msg:      msg,
 		}
+		inbox.Body, _ = proto.Marshal(msg)
 		// 将消息推送到kafka消息队列
-		_, _, err = s.producer.EnQueue(inbox, constant.CONST_MSG_KEY_MSG)
+		_, _, err = s.producer.EnQueue(inbox, constant.CONST_MSG_KEY_MSG+utils.GetChatPartition(msg.ChatId))
 		if err != nil {
 			xlog.Warn(ERROR_CODE_CHAT_INVITE_ENQUEUE_FAILED, ERROR_CHAT_INVITE_ENQUEUE_FAILED, err.Error())
 			return
@@ -357,7 +367,7 @@ func (s *chatInviteService) addedContactMessage(chat *po.Chat, invite *po.ChatIn
 
 func (s *chatInviteService) joinedChatGroupMessage(chat *po.Chat, invite *po.ChatInvite, member *po.ChatMember) {
 	var (
-		initiator *pb_chat_member.ChatMemberInfo
+		initiator *pb_chat_member.ChatMemberInfo // 发起人
 		seqId     int64
 		nowTs     = utils.NowUnix()
 		msg       *pb_msg.SrvChatMessage
@@ -426,10 +436,10 @@ func (s *chatInviteService) joinedChatGroupMessage(chat *po.Chat, invite *po.Cha
 	inbox = &pb_mq.InboxMessage{
 		Topic:    pb_enum.TOPIC_CHAT,
 		SubTopic: pb_enum.SUB_TOPIC_CHAT_JOINED_GROUP_CHAT,
-		Msg:      msg,
 	}
+	inbox.Body, _ = proto.Marshal(msg)
 	// 将消息推送到kafka消息队列
-	_, _, err = s.producer.EnQueue(inbox, constant.CONST_MSG_KEY_MSG)
+	_, _, err = s.producer.EnQueue(inbox, constant.CONST_MSG_KEY_MSG+utils.GetChatPartition(msg.ChatId))
 	if err != nil {
 		xlog.Warn(ERROR_CODE_CHAT_INVITE_ENQUEUE_FAILED, ERROR_CHAT_INVITE_ENQUEUE_FAILED, err.Error())
 		return

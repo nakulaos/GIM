@@ -1,13 +1,13 @@
 package service
 
 import (
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/constant"
+	"GIM/pkg/entity"
+	"GIM/pkg/proto/pb_enum"
+	"GIM/pkg/proto/pb_msg"
 	"github.com/IBM/sarama"
 	"google.golang.org/protobuf/proto"
-	"lark/pkg/common/xlog"
-	"lark/pkg/constant"
-	"lark/pkg/entity"
-	"lark/pkg/proto/pb_enum"
-	"lark/pkg/proto/pb_msg"
 )
 
 // Setup is run at the beginning of a new session, before ConsumeClaim
@@ -43,6 +43,7 @@ func (s *chatService) ConsumeClaim(session sarama.ConsumerGroupSession, claim sa
 func (s *chatService) MessageHandler(msg []byte, msgKey string) (err error) {
 	switch msgKey {
 	case constant.CONST_MSG_KEY_READ_RECEIPT:
+		// 客户端更新已读消息
 		s.updateReadReceiptSeq(msg)
 		return
 	case constant.CONST_MSG_KEY_CHAT_SEQ:

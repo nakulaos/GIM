@@ -1,14 +1,14 @@
 package message
 
 import (
+	"GIM/apps/message/internal/config"
+	"GIM/apps/message/internal/service"
+	"GIM/pkg/common/xgrpc"
+	"GIM/pkg/common/xkafka"
+	"GIM/pkg/proto/pb_msg"
 	"github.com/go-playground/validator/v10"
 	"google.golang.org/grpc"
 	"io"
-	"lark/apps/message/internal/config"
-	"lark/apps/message/internal/service"
-	"lark/pkg/common/xgrpc"
-	"lark/pkg/common/xkafka"
-	"lark/pkg/proto/pb_msg"
 )
 
 type MessageServer interface {

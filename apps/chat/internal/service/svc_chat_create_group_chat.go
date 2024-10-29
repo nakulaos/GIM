@@ -1,26 +1,32 @@
 package service
 
 import (
+	"GIM/business/biz_chat_invite"
+	"GIM/domain/do"
+	"GIM/domain/pdo"
+	"GIM/domain/po"
+	"GIM/pkg/common/xants"
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/common/xmysql"
+	"GIM/pkg/common/xsnowflake"
+	"GIM/pkg/constant"
+	"GIM/pkg/entity"
+	"GIM/pkg/proto/pb_chat"
+	"GIM/pkg/proto/pb_dist"
+	"GIM/pkg/proto/pb_enum"
+	"GIM/pkg/proto/pb_invite"
+	"GIM/pkg/utils"
 	"context"
 	"gorm.io/gorm"
-	"lark/business/biz_chat_invite"
-	"lark/domain/do"
-	"lark/domain/pdo"
-	"lark/domain/po"
-	"lark/pkg/common/xants"
-	"lark/pkg/common/xlog"
-	"lark/pkg/common/xmysql"
-	"lark/pkg/common/xsnowflake"
-	"lark/pkg/constant"
-	"lark/pkg/entity"
-	"lark/pkg/proto/pb_chat"
-	"lark/pkg/proto/pb_dist"
-	"lark/pkg/proto/pb_enum"
-	"lark/pkg/proto/pb_invite"
-	"lark/pkg/utils"
 )
 
 func (s *chatService) CreateGroupChat(ctx context.Context, req *pb_chat.CreateGroupChatReq) (resp *pb_chat.CreateGroupChatResp, _ error) {
+	/*
+		1. 判断创建者是否存在
+		2. chat，creator，群头像入库
+		3. 构建邀请信息入库
+		4. 构建请求分发信息
+	*/
 	resp = &pb_chat.CreateGroupChatResp{}
 	var (
 		creator = new(pdo.ChatCreator)
@@ -143,7 +149,7 @@ func (s *chatService) CreateGroupChat(ctx context.Context, req *pb_chat.CreateGr
 			var (
 				kfv = do.KeyFieldValue{chat.ChatId, chat.CreatorUid, "0"}
 			)
-			_, _, terr = s.cacheProducer.Push(kfv, constant.CONST_MSG_KEY_CACHE_CREATE_GROUP_CHAT)
+			_, _, terr = s.cacheProducer.Push(kfv, constant.CONST_MSG_KEY_CACHE_CREATE_GROUP_CHAT+utils.GetChatPartition(chat.ChatId))
 			if terr != nil {
 				xlog.Errorf("push chat member cache message failed. err:%s,chatId:%v,uid:%v", terr.Error(), member.ChatId, member.Uid)
 			}

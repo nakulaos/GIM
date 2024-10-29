@@ -1,8 +1,8 @@
 package xalipay
 
 import (
+	"GIM/pkg/conf"
 	"github.com/smartwalle/alipay/v3"
-	"lark/pkg/conf"
 	"log/slog"
 )
 

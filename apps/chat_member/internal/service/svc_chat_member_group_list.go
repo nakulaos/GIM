@@ -1,14 +1,18 @@
 package service
 
 import (
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/entity"
+	"GIM/pkg/proto/pb_chat_member"
+	"GIM/pkg/proto/pb_enum"
 	"context"
-	"lark/pkg/common/xlog"
-	"lark/pkg/entity"
-	"lark/pkg/proto/pb_chat_member"
-	"lark/pkg/proto/pb_enum"
 )
 
 func (s *chatMemberService) GetGroupChatList(ctx context.Context, req *pb_chat_member.GetGroupChatListReq) (resp *pb_chat_member.GetGroupChatListResp, _ error) {
+
+	/*
+		1. 获取群聊列表
+	*/
 	resp = new(pb_chat_member.GetGroupChatListResp)
 	var (
 		w   = entity.NewMysqlQuery()

@@ -1,9 +1,9 @@
 package cache
 
 import (
-	"lark/pkg/common/xlog"
-	"lark/pkg/common/xredis"
-	"lark/pkg/utils"
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/common/xredis"
+	"GIM/pkg/utils"
 	"time"
 )
 

@@ -1,15 +1,15 @@
 package service
 
 import (
+	chat_client "GIM/apps/chat/client"
+	"GIM/apps/chat_invite/internal/config"
+	dist_client "GIM/apps/dist/client"
+	user_client "GIM/apps/user/client"
+	"GIM/domain/cache"
+	"GIM/domain/repo"
+	"GIM/pkg/common/xkafka"
+	"GIM/pkg/proto/pb_invite"
 	"context"
-	chat_client "lark/apps/chat/client"
-	"lark/apps/chat_invite/internal/config"
-	dist_client "lark/apps/dist/client"
-	user_client "lark/apps/user/client"
-	"lark/domain/cache"
-	"lark/domain/repo"
-	"lark/pkg/common/xkafka"
-	"lark/pkg/proto/pb_invite"
 )
 
 type ChatInviteService interface {

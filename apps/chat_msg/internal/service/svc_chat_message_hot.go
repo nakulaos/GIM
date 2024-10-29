@@ -1,10 +1,10 @@
 package service
 
 import (
+	"GIM/domain/po"
+	"GIM/pkg/entity"
+	"GIM/pkg/proto/pb_chat_msg"
 	"go.mongodb.org/mongo-driver/bson"
-	"lark/domain/po"
-	"lark/pkg/entity"
-	"lark/pkg/proto/pb_chat_msg"
 )
 
 func (s *chatMessageService) GetHotMessages(req *pb_chat_msg.GetChatMessagesReq, maxSeqId int64) (list []*po.Message, next bool, err error) {

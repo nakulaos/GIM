@@ -1,6 +1,6 @@
-# docker build -t lark:1.0.3 .
-# docker tag lark-flink:1.14.6 saeipi/lark-flink:1.14.6
-# docker push saeipi/lark-flink:1.14.6
+# docker build -t gim:1.0.3 .
+# docker tag gim-flink:1.14.6 saeipi/gim-flink:1.14.6
+# docker push saeipi/gim-flink:1.14.6
 # systemctl start docker # 启动
 # systemctl daemon-reload # 守护进程重启
 # systemctl restart docker / service docker restart # 重启docker服务
@@ -29,12 +29,12 @@ ENV GO111MODULE=on \
 ## 作者
 MAINTAINER saeipi "saeipi@163.com"
 ## 在docker的根目录下创立相应的应用目录
-RUN mkdir -p /lark
+RUN mkdir -p /gim
 ## 把宿主机上指定目录下的文件复制到/lark目录下
-WORKDIR /lark
+WORKDIR /gim
 COPY . .
 ## 编译项目
-WORKDIR /lark/scripts
+WORKDIR /gim/scripts
 RUN chmod +x *.sh
 RUN /bin/sh -c ./build.sh
 
@@ -51,12 +51,12 @@ ENV AppRunMode prod
 RUN apt-get install -y vim curl tzdata gawk
 RUN ln -fs /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && dpkg-reconfigure -f noninteractive tzdata
 
-RUN mkdir -p /lark
-RUN mkdir -p /var/log/lark
+RUN mkdir -p /gim
+RUN mkdir -p /var/log/gim
 
-COPY --from=build /lark/build /lark/build
+COPY --from=build /gim/build /gim/build
 
-WORKDIR /lark/build/run
+WORKDIR /gim/build/run
 RUN chmod +x *.sh
 ENTRYPOINT ["./run_all.sh"]
 

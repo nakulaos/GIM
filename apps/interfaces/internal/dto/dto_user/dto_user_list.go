@@ -1,7 +1,7 @@
 package dto_user
 
 import (
-	"lark/apps/interfaces/internal/dto/dto_avatar"
+	"GIM/apps/interfaces/internal/dto/dto_avatar"
 )
 
 type UserListReq struct {

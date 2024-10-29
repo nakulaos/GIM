@@ -1,10 +1,10 @@
 package main
 
 import (
-	"lark/apps/apis/upload/internal/config"
-	"lark/apps/apis/upload/internal/server"
-	"lark/pkg/commands"
-	"lark/pkg/common/xredis"
+	"GIM/apps/apis/upload/internal/config"
+	"GIM/apps/apis/upload/internal/server"
+	"GIM/pkg/commands"
+	"GIM/pkg/common/xredis"
 )
 
 func init() {

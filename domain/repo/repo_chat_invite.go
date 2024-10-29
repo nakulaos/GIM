@@ -1,11 +1,11 @@
 package repo
 
 import (
+	"GIM/domain/do"
+	"GIM/domain/po"
+	"GIM/pkg/common/xmysql"
+	"GIM/pkg/entity"
 	"gorm.io/gorm"
-	"lark/domain/do"
-	"lark/domain/po"
-	"lark/pkg/common/xmysql"
-	"lark/pkg/entity"
 )
 
 type ChatInviteRepository interface {

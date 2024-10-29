@@ -1,8 +1,8 @@
 package cloud_msg
 
 import (
-	"lark/apps/cloud_msg/internal/config"
-	"lark/apps/cloud_msg/internal/service"
+	"GIM/apps/cloud_msg/internal/config"
+	"GIM/apps/cloud_msg/internal/service"
 )
 
 type CloudMessageServer interface {

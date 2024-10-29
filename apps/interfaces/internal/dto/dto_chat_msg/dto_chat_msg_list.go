@@ -1,7 +1,7 @@
 package dto_chat_msg
 
 import (
-	"lark/pkg/proto/pb_enum"
+	"GIM/pkg/proto/pb_enum"
 )
 
 type GetChatMessageListReq struct {

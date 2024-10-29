@@ -1,14 +1,14 @@
 package server
 
 import (
+	"GIM/apps/apis/upload/internal/config"
+	"GIM/apps/apis/upload/internal/router"
+	"GIM/pkg/commands"
+	"GIM/pkg/common/xetcd"
+	"GIM/pkg/common/xgin"
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/utils"
 	"flag"
-	"lark/apps/apis/upload/internal/config"
-	"lark/apps/apis/upload/internal/router"
-	"lark/pkg/commands"
-	"lark/pkg/common/xetcd"
-	"lark/pkg/common/xgin"
-	"lark/pkg/common/xlog"
-	"lark/pkg/utils"
 )
 
 type server struct {

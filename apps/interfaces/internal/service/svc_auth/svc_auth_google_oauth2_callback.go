@@ -1,11 +1,11 @@
 package svc_auth
 
 import (
+	"GIM/apps/interfaces/internal/dto/dto_auth"
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/proto/pb_auth"
+	"GIM/pkg/xhttp"
 	"github.com/jinzhu/copier"
-	"lark/apps/interfaces/internal/dto/dto_auth"
-	"lark/pkg/common/xlog"
-	"lark/pkg/proto/pb_auth"
-	"lark/pkg/xhttp"
 )
 
 func (s *authService) GoogleOAuth2Callback(params *dto_auth.GoogleOauthCallbackReq) (resp *xhttp.Resp) {

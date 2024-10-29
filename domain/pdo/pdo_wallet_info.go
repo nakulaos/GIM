@@ -1,6 +1,6 @@
 package pdo
 
-import "lark/pkg/utils"
+import "GIM/pkg/utils"
 
 type WalletInfo struct {
 	WalletId   int64 `json:"wallet_id" field:"wallet_id"`

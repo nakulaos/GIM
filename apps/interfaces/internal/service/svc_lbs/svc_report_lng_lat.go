@@ -1,11 +1,11 @@
 package svc_lbs
 
 import (
+	"GIM/apps/interfaces/internal/dto/dto_lbs"
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/proto/pb_lbs"
+	"GIM/pkg/xhttp"
 	"github.com/jinzhu/copier"
-	"lark/apps/interfaces/internal/dto/dto_lbs"
-	"lark/pkg/common/xlog"
-	"lark/pkg/proto/pb_lbs"
-	"lark/pkg/xhttp"
 )
 
 func (s *lbsService) ReportLngLat(params *dto_lbs.ReportLngLatReq, uid int64) (resp *xhttp.Resp) {

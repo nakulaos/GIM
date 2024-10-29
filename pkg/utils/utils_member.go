@@ -1,7 +1,7 @@
 package utils
 
 import (
-	"lark/pkg/proto/pb_enum"
+	"GIM/pkg/proto/pb_enum"
 	"strings"
 )
 

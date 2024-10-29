@@ -1,12 +1,12 @@
 package chat_invite_client
 
 import (
+	"GIM/pkg/common/xgrpc"
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/conf"
+	"GIM/pkg/proto/pb_invite"
 	"context"
 	"google.golang.org/grpc"
-	"lark/pkg/common/xgrpc"
-	"lark/pkg/common/xlog"
-	"lark/pkg/conf"
-	"lark/pkg/proto/pb_invite"
 )
 
 type ChatInviteClient interface {

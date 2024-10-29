@@ -1,13 +1,13 @@
 package cr_chat
 
 import (
+	"GIM/domain/cache"
+	"GIM/domain/po"
+	"GIM/domain/repo"
+	"GIM/pkg/common/xants"
+	"GIM/pkg/entity"
+	"GIM/pkg/proto/pb_chat"
 	"github.com/jinzhu/copier"
-	"lark/domain/cache"
-	"lark/domain/po"
-	"lark/domain/repo"
-	"lark/pkg/common/xants"
-	"lark/pkg/entity"
-	"lark/pkg/proto/pb_chat"
 )
 
 func GetGroupChatInfo(chatCache cache.ChatCache, chatRepo repo.ChatRepository, chatId int64) (chatInfo *pb_chat.ChatInfo, err error) {

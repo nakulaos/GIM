@@ -1,19 +1,23 @@
 package service
 
 import (
+	"GIM/pkg/common/xes"
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/proto/pb_chat_member"
+	"GIM/pkg/proto/pb_chat_msg"
+	"GIM/pkg/utils"
 	"bytes"
 	"context"
 	"encoding/json"
 	"github.com/elastic/go-elasticsearch/v7"
 	"github.com/elastic/go-elasticsearch/v7/esapi"
-	"lark/pkg/common/xes"
-	"lark/pkg/common/xlog"
-	"lark/pkg/proto/pb_chat_member"
-	"lark/pkg/proto/pb_chat_msg"
-	"lark/pkg/utils"
 )
 
 func (s *chatMessageService) SearchMessage(ctx context.Context, req *pb_chat_msg.SearchMessageReq) (resp *pb_chat_msg.SearchMessageResp, _ error) {
+	/*
+		1. 先查看是否是群成员（缓存+数据库）
+		2. es搜索消息
+	*/
 	resp = &pb_chat_msg.SearchMessageResp{List: make([]*pb_chat_msg.MessageSummary, 0)}
 	var (
 		buf    bytes.Buffer

@@ -1,13 +1,13 @@
 package dig
 
 import (
+	"GIM/apps/convo/internal/config"
+	"GIM/apps/convo/internal/server"
+	"GIM/apps/convo/internal/server/convo"
+	"GIM/apps/convo/internal/service"
+	"GIM/domain/cache"
+	"GIM/domain/repo"
 	"go.uber.org/dig"
-	"lark/apps/convo/internal/config"
-	"lark/apps/convo/internal/server"
-	"lark/apps/convo/internal/server/convo"
-	"lark/apps/convo/internal/service"
-	"lark/domain/cache"
-	"lark/domain/repo"
 	"log"
 )
 

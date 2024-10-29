@@ -1,10 +1,10 @@
 package logic
 
 import (
-	"lark/pkg/proto/pb_cm"
-	"lark/pkg/proto/pb_enum"
-	"lark/pkg/proto/pb_gw"
-	"lark/pkg/proto/pb_obj"
+	"GIM/pkg/proto/pb_cm"
+	"GIM/pkg/proto/pb_enum"
+	"GIM/pkg/proto/pb_gw"
+	"GIM/pkg/proto/pb_obj"
 )
 
 const (

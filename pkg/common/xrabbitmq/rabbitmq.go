@@ -1,11 +1,11 @@
 package xrabbitmq
 
 import (
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/conf"
 	"errors"
 	"fmt"
 	amqp "github.com/rabbitmq/amqp091-go"
-	"lark/pkg/common/xlog"
-	"lark/pkg/conf"
 	"runtime/debug"
 	"strings"
 	"time"

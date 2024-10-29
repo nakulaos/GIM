@@ -1,11 +1,11 @@
 package main
 
 import (
-	"lark/apps/interfaces/internal/config"
-	_ "lark/apps/interfaces/internal/config"
-	"lark/apps/interfaces/internal/server"
-	"lark/pkg/commands"
-	"lark/pkg/common/xredis"
+	"GIM/apps/interfaces/internal/config"
+	_ "GIM/apps/interfaces/internal/config"
+	"GIM/apps/interfaces/internal/server"
+	"GIM/pkg/commands"
+	"GIM/pkg/common/xredis"
 )
 
 func init() {

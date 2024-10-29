@@ -1,13 +1,13 @@
 package convo
 
 import (
+	"GIM/apps/convo/internal/config"
+	"GIM/apps/convo/internal/service"
+	"GIM/pkg/common/xgrpc"
+	"GIM/pkg/common/xmonitor"
+	"GIM/pkg/proto/pb_convo"
 	"google.golang.org/grpc"
 	"io"
-	"lark/apps/convo/internal/config"
-	"lark/apps/convo/internal/service"
-	"lark/pkg/common/xgrpc"
-	"lark/pkg/common/xmonitor"
-	"lark/pkg/proto/pb_convo"
 )
 
 type ConvoServer interface {

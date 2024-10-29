@@ -1,10 +1,10 @@
 package xalipay
 
 import (
+	"GIM/domain/po"
+	"GIM/pkg/conf"
 	"fmt"
 	"github.com/smartwalle/alipay/v3"
-	"lark/domain/po"
-	"lark/pkg/conf"
 	"log/slog"
 	"net/http"
 	"net/url"

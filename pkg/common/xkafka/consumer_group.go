@@ -1,9 +1,9 @@
 package xkafka
 
 import (
+	"GIM/pkg/common/xlog"
 	"context"
 	"github.com/IBM/sarama"
-	"lark/pkg/common/xlog"
 	"os"
 	"os/signal"
 	"sync"

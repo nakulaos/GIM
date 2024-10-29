@@ -1,18 +1,24 @@
 package service
 
 import (
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/common/xmysql"
+	"GIM/pkg/constant"
+	"GIM/pkg/entity"
+	"GIM/pkg/proto/pb_enum"
+	"GIM/pkg/proto/pb_user"
 	"context"
 	"github.com/jinzhu/copier"
 	"gorm.io/gorm"
-	"lark/pkg/common/xlog"
-	"lark/pkg/common/xmysql"
-	"lark/pkg/constant"
-	"lark/pkg/entity"
-	"lark/pkg/proto/pb_enum"
-	"lark/pkg/proto/pb_user"
 )
 
 func (s *userService) UploadAvatar(ctx context.Context, req *pb_user.UploadAvatarReq) (resp *pb_user.UploadAvatarResp, _ error) {
+	/*
+		1. 更新用户表
+		2. 更新chat member表
+		3. 删除缓存--用户表
+		4. 更新缓存--chat member表
+	*/
 	resp = &pb_user.UploadAvatarResp{Avatar: &pb_user.AvatarInfo{}}
 	var (
 		u   = entity.NewMysqlUpdate()

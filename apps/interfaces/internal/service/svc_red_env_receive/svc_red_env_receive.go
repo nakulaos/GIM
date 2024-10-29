@@ -1,10 +1,10 @@
 package svc_red_env_receive
 
 import (
-	"lark/apps/interfaces/internal/config"
-	"lark/apps/interfaces/internal/dto/dto_red_env_receive"
-	red_env_receive_client "lark/apps/red_env_receive/client"
-	"lark/pkg/xhttp"
+	"GIM/apps/interfaces/internal/config"
+	"GIM/apps/interfaces/internal/dto/dto_red_env_receive"
+	red_env_receive_client "GIM/apps/red_env_receive/client"
+	"GIM/pkg/xhttp"
 )
 
 type RedEnvReceiveService interface {

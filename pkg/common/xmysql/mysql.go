@@ -1,14 +1,14 @@
 package xmysql
 
 import (
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/conf"
 	"database/sql"
 	"errors"
 	"fmt"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
-	"lark/pkg/common/xlog"
-	"lark/pkg/conf"
 	"log"
 	"os"
 	"time"

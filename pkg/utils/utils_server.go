@@ -1,7 +1,7 @@
 package utils
 
 import (
-	"lark/pkg/proto/pb_enum"
+	"GIM/pkg/proto/pb_enum"
 	"strings"
 )
 
@@ -47,6 +47,7 @@ func GetServerId(val int64) (ios, android, mac, windows, web int64) {
 }
 
 func NewServerId(old int64, serverId int64, platform pb_enum.PLATFORM_TYPE) int64 {
+	// 一个平台只能用一台server id
 	ios := old / 10000
 	android := old / 1000 % 10
 	mac := old / 100 % 10

@@ -1,7 +1,7 @@
 package ctrl_chat_msg
 
 import (
-	"lark/apps/interfaces/internal/service/svc_chat_msg"
+	"GIM/apps/interfaces/internal/service/svc_chat_msg"
 )
 
 type ChatMessageCtrl struct {

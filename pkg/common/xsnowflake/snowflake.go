@@ -1,8 +1,8 @@
 package xsnowflake
 
 import (
+	"GIM/pkg/utils"
 	"github.com/bwmarrin/snowflake"
-	"lark/pkg/utils"
 	"math/rand"
 	"strconv"
 )

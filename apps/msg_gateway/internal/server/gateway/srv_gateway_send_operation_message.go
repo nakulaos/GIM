@@ -1,9 +1,9 @@
 package gateway
 
 import (
-	"lark/pkg/proto/pb_enum"
-	"lark/pkg/proto/pb_gw"
-	"lark/pkg/proto/pb_obj"
+	"GIM/pkg/proto/pb_enum"
+	"GIM/pkg/proto/pb_gw"
+	"GIM/pkg/proto/pb_obj"
 )
 
 func (s *gatewayServer) sendOperationMessage(req *pb_gw.SendTopicMessageReq, resp *pb_gw.SendTopicMessageResp) {

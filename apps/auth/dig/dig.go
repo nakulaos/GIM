@@ -1,14 +1,14 @@
 package dig
 
 import (
+	"GIM/apps/auth/internal/config"
+	"GIM/apps/auth/internal/server"
+	"GIM/apps/auth/internal/server/auth"
+	"GIM/apps/auth/internal/service"
+	"GIM/business/biz_online"
+	"GIM/domain/cache"
+	"GIM/domain/repo"
 	"go.uber.org/dig"
-	"lark/apps/auth/internal/config"
-	"lark/apps/auth/internal/server"
-	"lark/apps/auth/internal/server/auth"
-	"lark/apps/auth/internal/service"
-	"lark/business/biz_online"
-	"lark/domain/cache"
-	"lark/domain/repo"
 	"log"
 )
 

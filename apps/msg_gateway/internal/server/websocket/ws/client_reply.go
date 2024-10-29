@@ -1,11 +1,11 @@
 package ws
 
 import (
+	"GIM/pkg/proto/pb_enum"
+	"GIM/pkg/proto/pb_msg"
+	"GIM/pkg/utils"
 	"bytes"
 	"google.golang.org/protobuf/proto"
-	"lark/pkg/proto/pb_enum"
-	"lark/pkg/proto/pb_msg"
-	"lark/pkg/utils"
 )
 
 func (c *Client) overloadReply(buf []byte) {

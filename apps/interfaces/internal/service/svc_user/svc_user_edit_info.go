@@ -1,11 +1,11 @@
 package svc_user
 
 import (
+	"GIM/apps/interfaces/internal/dto/dto_user"
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/proto/pb_user"
+	"GIM/pkg/xhttp"
 	"github.com/jinzhu/copier"
-	"lark/apps/interfaces/internal/dto/dto_user"
-	"lark/pkg/common/xlog"
-	"lark/pkg/proto/pb_user"
-	"lark/pkg/xhttp"
 )
 
 func (s *userService) EditUserInfo(params *dto_user.EditUserInfoReq, uid int64) (resp *xhttp.Resp) {

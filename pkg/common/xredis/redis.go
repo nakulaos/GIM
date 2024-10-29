@@ -1,7 +1,7 @@
 package xredis
 
 import (
-	"lark/pkg/conf"
+	"GIM/pkg/conf"
 )
 
 var (

@@ -1,18 +1,19 @@
 package service
 
 import (
+	"GIM/domain/cr/cr_user"
+	"GIM/domain/po"
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/entity"
+	"GIM/pkg/proto/pb_chat"
+	"GIM/pkg/proto/pb_enum"
+	"GIM/pkg/proto/pb_user"
 	"context"
 	"github.com/jinzhu/copier"
-	"lark/domain/cr/cr_user"
-	"lark/domain/po"
-	"lark/pkg/common/xlog"
-	"lark/pkg/entity"
-	"lark/pkg/proto/pb_chat"
-	"lark/pkg/proto/pb_enum"
-	"lark/pkg/proto/pb_user"
 )
 
 func (s *chatService) GroupChatDetails(ctx context.Context, req *pb_chat.GroupChatDetailsReq) (resp *pb_chat.GroupChatDetailsResp, _ error) {
+	// 从数据库中获取群聊详情
 	resp = &pb_chat.GroupChatDetailsResp{Details: &pb_chat.GroupChatDetails{Creator: &pb_chat.ChatCreator{}}}
 	var (
 		w    = entity.NewMysqlQuery()

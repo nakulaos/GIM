@@ -1,12 +1,12 @@
 package chat_invite
 
 import (
+	"GIM/apps/chat_invite/internal/config"
+	"GIM/apps/chat_invite/internal/service"
+	"GIM/pkg/common/xgrpc"
+	"GIM/pkg/proto/pb_invite"
 	"google.golang.org/grpc"
 	"io"
-	"lark/apps/chat_invite/internal/config"
-	"lark/apps/chat_invite/internal/service"
-	"lark/pkg/common/xgrpc"
-	"lark/pkg/proto/pb_invite"
 )
 
 type ChatInviteServer interface {

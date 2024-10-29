@@ -8,10 +8,10 @@
 package jpeg
 
 import (
+	"GIM/pkg/common/ximaging/jpeg/imageutil"
 	"image"
 	"image/color"
 	"io"
-	"lark/pkg/common/ximaging/jpeg/imageutil"
 )
 
 // TODO(nigeltao): fix up the doc comment style so that sentences start with

@@ -1,6 +1,6 @@
 package dto_auth
 
-import "lark/pkg/proto/pb_enum"
+import "GIM/pkg/proto/pb_enum"
 
 type GoogleOauthCallbackReq struct {
 	Code     string                `form:"code" json:"code"`

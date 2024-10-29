@@ -1,11 +1,11 @@
 package config
 
 import (
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/conf"
+	"GIM/pkg/utils"
 	"flag"
 	"github.com/spf13/cast"
-	"lark/pkg/common/xlog"
-	"lark/pkg/conf"
-	"lark/pkg/utils"
 )
 
 type Config struct {

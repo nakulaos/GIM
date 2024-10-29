@@ -1,13 +1,13 @@
 package service
 
 import (
+	"GIM/domain/po"
+	"GIM/pkg/common/xants"
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/entity"
+	"GIM/pkg/proto/pb_chat"
 	"context"
 	"github.com/jinzhu/copier"
-	"lark/domain/po"
-	"lark/pkg/common/xants"
-	"lark/pkg/common/xlog"
-	"lark/pkg/entity"
-	"lark/pkg/proto/pb_chat"
 )
 
 func (s *chatService) GetChatInfo(ctx context.Context, req *pb_chat.GetChatInfoReq) (resp *pb_chat.GetChatInfoResp, _ error) {

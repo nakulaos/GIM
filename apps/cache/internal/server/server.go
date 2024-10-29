@@ -1,8 +1,8 @@
 package server
 
 import (
-	srv_cache "lark/apps/cache/internal/server/cache"
-	"lark/pkg/commands"
+	srv_cache "GIM/apps/cache/internal/server/cache"
+	"GIM/pkg/commands"
 )
 
 type server struct {

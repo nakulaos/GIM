@@ -1,6 +1,8 @@
 package xetcd
 
 import (
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/conf"
 	"context"
 	"fmt"
 	otgrpc "github.com/opentracing-contrib/go-grpc"
@@ -11,8 +13,6 @@ import (
 	"google.golang.org/grpc/credentials"
 	"google.golang.org/grpc/credentials/insecure"
 	"google.golang.org/grpc/resolver"
-	"lark/pkg/common/xlog"
-	"lark/pkg/conf"
 	"strings"
 	"sync"
 	"time"

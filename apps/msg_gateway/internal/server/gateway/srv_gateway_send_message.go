@@ -1,17 +1,17 @@
 package gateway
 
 import (
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/proto/pb_enum"
+	"GIM/pkg/proto/pb_gw"
+	"GIM/pkg/utils"
 	"context"
-	"lark/pkg/common/xlog"
-	"lark/pkg/proto/pb_enum"
-	"lark/pkg/proto/pb_gw"
-	"lark/pkg/utils"
 )
 
 func (s *gatewayServer) SendTopicMessage(ctx context.Context, req *pb_gw.SendTopicMessageReq) (resp *pb_gw.SendTopicMessageResp, _ error) {
 	resp = new(pb_gw.SendTopicMessageResp)
 	switch req.Topic {
-	case pb_enum.TOPIC_CHAT:
+	case pb_enum.TOPIC_CHAT, pb_enum.TOPIC_MSG_OPR, pb_enum.TOPIC_RED_ENVELOPE:
 		s.topicMessageHandler(req, resp)
 	case pb_enum.TOPIC_CHAT_INVITE:
 		s.topicInvite(req, resp)
@@ -24,7 +24,10 @@ func (s *gatewayServer) topicMessageHandler(req *pb_gw.SendTopicMessageReq, resp
 	case pb_enum.SUB_TOPIC_CHAT_MSG,
 		pb_enum.SUB_TOPIC_CHAT_JOINED_GROUP_CHAT,
 		pb_enum.SUB_TOPIC_CHAT_QUIT_GROUP_CHAT,
-		pb_enum.SUB_TOPIC_CHAT_REMOVE_CHAT_MEMBER:
+		pb_enum.SUB_TOPIC_CHAT_REMOVE_CHAT_MEMBER,
+		pb_enum.SUB_TOPIC_CHAT_GIVE_RED_ENVELOPE,
+		pb_enum.SUB_TOPIC_CHAT_RECEIVE_RED_ENVELOPE,
+		pb_enum.SUB_TOPIC_CHAT_MSG_READ_RECEIPT:
 		s.sendChatMessage(req, resp)
 	case pb_enum.SUB_TOPIC_CHAT_OPERATION:
 		s.sendOperationMessage(req, resp)

@@ -1,12 +1,12 @@
 package auth
 
 import (
+	"GIM/apps/auth/internal/config"
+	"GIM/apps/auth/internal/service"
+	"GIM/pkg/common/xgrpc"
+	"GIM/pkg/proto/pb_auth"
 	"google.golang.org/grpc"
 	"io"
-	"lark/apps/auth/internal/config"
-	"lark/apps/auth/internal/service"
-	"lark/pkg/common/xgrpc"
-	"lark/pkg/proto/pb_auth"
 )
 
 type AuthServer interface {

@@ -1,8 +1,8 @@
 package auth
 
 import (
+	"GIM/pkg/proto/pb_auth"
 	"context"
-	"lark/pkg/proto/pb_auth"
 )
 
 func (s *authServer) SignUp(ctx context.Context, req *pb_auth.SignUpReq) (resp *pb_auth.SignUpResp, err error) {

@@ -1,10 +1,10 @@
 package svc_auth
 
 import (
-	"lark/apps/interfaces/internal/dto/dto_auth"
-	"lark/pkg/common/xlog"
-	"lark/pkg/proto/pb_auth"
-	"lark/pkg/xhttp"
+	"GIM/apps/interfaces/internal/dto/dto_auth"
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/proto/pb_auth"
+	"GIM/pkg/xhttp"
 )
 
 func (s *authService) RefreshToken(params *dto_auth.RefreshTokenReq) (resp *xhttp.Resp) {

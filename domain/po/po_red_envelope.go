@@ -1,8 +1,8 @@
 package po
 
 import (
-	"lark/pkg/entity"
-	"lark/pkg/proto/pb_enum"
+	"GIM/pkg/entity"
+	"GIM/pkg/proto/pb_enum"
 	"strconv"
 )
 

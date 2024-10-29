@@ -25,7 +25,7 @@ type Message struct {
 	Body           string `gorm:"column:body;NOT NULL" json:"body" bson:"body"`                                               // 消息本体
 	Status         int    `gorm:"column:status;default:0;NOT NULL" json:"status" bson:"status"`                               // 消息状态
 	SentTs         int64  `gorm:"column:sent_ts;default:0;NOT NULL" json:"sent_ts" bson:"sent_ts"`                            // 客户端本地发送时间
-	SrvTs          int64  `gorm:"column:srv_ts;default:0;NOT NULL" json:"srv_ts" bson:"srv_ts"`                               // 服务端接收消息的时间
+	SrvTs          int64  `gorm:"column:srv_ts;default:0;NOT NULL" json:"srv_ts" bson:"srv_ts"`                               // 服务端接收消息的时间，用来确定消息是否撤回
 	AssocId        int64  `gorm:"column:assoc_id;default:0;NOT NULL" json:"assoc_id"`                                         // 关联ID
 	UpdatedTs      int64  `gorm:"column:updated_ts;autoUpdateTime" json:"updated_ts" bson:"updated_ts"`                       // 更新时间
 	DeletedTs      int64  `gorm:"column:deleted_ts;default:0;NOT NULL" json:"deleted_ts" bson:"deleted_ts"`                   // 删除时间

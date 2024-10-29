@@ -1,11 +1,11 @@
 package svc_chat
 
 import (
+	"GIM/apps/interfaces/internal/dto/dto_chat"
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/proto/pb_chat"
+	"GIM/pkg/xhttp"
 	"github.com/jinzhu/copier"
-	"lark/apps/interfaces/internal/dto/dto_chat"
-	"lark/pkg/common/xlog"
-	"lark/pkg/proto/pb_chat"
-	"lark/pkg/xhttp"
 )
 
 func (s *chatService) RemoveGroupChatMember(params *dto_chat.RemoveGroupChatMemberReq, uid int64) (resp *xhttp.Resp) {

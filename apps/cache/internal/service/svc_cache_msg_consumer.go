@@ -1,13 +1,13 @@
 package service
 
 import (
+	"GIM/domain/do"
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/constant"
+	"GIM/pkg/proto/pb_enum"
+	"GIM/pkg/utils"
 	"github.com/IBM/sarama"
 	"github.com/spf13/cast"
-	"lark/domain/do"
-	"lark/pkg/common/xlog"
-	"lark/pkg/constant"
-	"lark/pkg/proto/pb_enum"
-	"lark/pkg/utils"
 )
 
 func (s *cacheService) Setup(_ sarama.ConsumerGroupSession) error {
@@ -33,6 +33,7 @@ func (s *cacheService) ConsumeClaim(session sarama.ConsumerGroupSession, claim s
 }
 
 func (s *cacheService) MessageHandler(msg []byte, key string) (err error) {
+	// 这一部分的缓存主要用来兜底的
 	if len(msg) == 0 {
 		return
 	}

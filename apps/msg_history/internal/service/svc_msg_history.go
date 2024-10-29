@@ -1,13 +1,13 @@
 package service
 
 import (
+	"GIM/apps/msg_history/internal/config"
+	"GIM/domain/cache"
+	"GIM/domain/repo"
+	"GIM/pkg/common/xkafka"
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/obj"
 	"github.com/IBM/sarama"
-	"lark/apps/msg_history/internal/config"
-	"lark/domain/cache"
-	"lark/domain/repo"
-	"lark/pkg/common/xkafka"
-	"lark/pkg/common/xlog"
-	"lark/pkg/obj"
 )
 
 type MessageHistoryService interface {

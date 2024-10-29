@@ -1,10 +1,10 @@
 package ws
 
 import (
+	"GIM/pkg/utils"
 	"bytes"
 	"github.com/gorilla/websocket"
 	"io"
-	"lark/pkg/utils"
 	"log"
 	"runtime/debug"
 	"sync"

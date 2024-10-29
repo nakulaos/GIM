@@ -1,12 +1,12 @@
 package chat_member
 
 import (
+	"GIM/apps/chat_member/internal/config"
+	"GIM/apps/chat_member/internal/service"
+	"GIM/pkg/common/xgrpc"
+	"GIM/pkg/proto/pb_chat_member"
 	"google.golang.org/grpc"
 	"io"
-	"lark/apps/chat_member/internal/config"
-	"lark/apps/chat_member/internal/service"
-	"lark/pkg/common/xgrpc"
-	"lark/pkg/proto/pb_chat_member"
 )
 
 type ChatMemberServer interface {

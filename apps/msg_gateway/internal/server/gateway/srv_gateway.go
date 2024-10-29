@@ -1,21 +1,21 @@
 package gateway
 
 import (
+	"GIM/apps/msg_gateway/internal/config"
+	"GIM/apps/msg_gateway/internal/server/websocket/ws"
+	"GIM/apps/msg_gateway/internal/service"
+	"GIM/domain/cache"
+	"GIM/pkg/common/xgrpc"
+	"GIM/pkg/common/xkafka"
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/common/xmonitor"
+	"GIM/pkg/constant"
+	"GIM/pkg/obj"
+	"GIM/pkg/proto/pb_gw"
+	"GIM/pkg/utils"
 	"github.com/IBM/sarama"
 	"google.golang.org/grpc"
 	"io"
-	"lark/apps/msg_gateway/internal/config"
-	"lark/apps/msg_gateway/internal/server/websocket/ws"
-	"lark/apps/msg_gateway/internal/service"
-	"lark/domain/cache"
-	"lark/pkg/common/xgrpc"
-	"lark/pkg/common/xkafka"
-	"lark/pkg/common/xlog"
-	"lark/pkg/common/xmonitor"
-	"lark/pkg/constant"
-	"lark/pkg/obj"
-	"lark/pkg/proto/pb_gw"
-	"lark/pkg/utils"
 	"time"
 )
 

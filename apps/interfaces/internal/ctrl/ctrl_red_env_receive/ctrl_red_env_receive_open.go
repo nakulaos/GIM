@@ -1,11 +1,11 @@
 package ctrl_red_env_receive
 
 import (
+	"GIM/apps/interfaces/internal/dto/dto_red_env_receive"
+	"GIM/pkg/common/xgin"
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/xhttp"
 	"github.com/gin-gonic/gin"
-	"lark/apps/interfaces/internal/dto/dto_red_env_receive"
-	"lark/pkg/common/xgin"
-	"lark/pkg/common/xlog"
-	"lark/pkg/xhttp"
 )
 
 func (ctrl *RedEnvReceiveCtrl) OpenRedEnvelope(ctx *gin.Context) {

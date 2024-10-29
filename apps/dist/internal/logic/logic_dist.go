@@ -1,12 +1,12 @@
 package logic
 
 import (
+	"GIM/pkg/common/xredis"
+	"GIM/pkg/constant"
+	"GIM/pkg/proto/pb_enum"
+	"GIM/pkg/proto/pb_obj"
+	"GIM/pkg/utils"
 	"github.com/spf13/cast"
-	"lark/pkg/common/xredis"
-	"lark/pkg/constant"
-	"lark/pkg/proto/pb_enum"
-	"lark/pkg/proto/pb_obj"
-	"lark/pkg/utils"
 	"sync"
 )
 
@@ -19,7 +19,8 @@ func GetMembersFromHash(hashmap map[string]string) (distMembers map[int64][]*pb_
 
 func groupFromHashmap(hashmap map[string]string) (distMembers map[int64][]*pb_obj.Int64Array) {
 	var (
-		srvIds    = getUsersServerId(hashmap)
+		// hashmap = uid -> status
+		srvIds    = getUsersServerId(hashmap) // id -> server_id
 		uid       string
 		uidVal    int64
 		status    string
@@ -39,6 +40,7 @@ func groupFromHashmap(hashmap map[string]string) (distMembers map[int64][]*pb_ob
 }
 
 func getUsersServerId(hashmap map[string]string) (srvIds map[int64]int64) {
+	// get server id from uid
 	var (
 		key   = constant.RK_SYNC_USER_SERVER
 		uid   string

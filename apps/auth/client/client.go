@@ -1,12 +1,12 @@
 package auth_client
 
 import (
+	"GIM/pkg/common/xgrpc"
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/conf"
+	"GIM/pkg/proto/pb_auth"
 	"context"
 	"google.golang.org/grpc"
-	"lark/pkg/common/xgrpc"
-	"lark/pkg/common/xlog"
-	"lark/pkg/conf"
-	"lark/pkg/proto/pb_auth"
 )
 
 type AuthClient interface {

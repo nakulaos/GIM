@@ -1,10 +1,10 @@
 package router
 
 import (
+	"GIM/apps/interfaces/dig"
+	"GIM/apps/interfaces/internal/ctrl/ctrl_auth"
+	"GIM/apps/interfaces/internal/service/svc_auth"
 	"github.com/gin-gonic/gin"
-	"lark/apps/interfaces/dig"
-	"lark/apps/interfaces/internal/ctrl/ctrl_auth"
-	"lark/apps/interfaces/internal/service/svc_auth"
 )
 
 func registerOpenAuthRouter(group *gin.RouterGroup) {

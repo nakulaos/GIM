@@ -1,11 +1,11 @@
 package cache
 
 import (
-	"lark/pkg/common/xlog"
-	"lark/pkg/common/xredis"
-	"lark/pkg/constant"
-	"lark/pkg/proto/pb_chat"
-	"lark/pkg/utils"
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/common/xredis"
+	"GIM/pkg/constant"
+	"GIM/pkg/proto/pb_chat"
+	"GIM/pkg/utils"
 )
 
 type ChatCache interface {

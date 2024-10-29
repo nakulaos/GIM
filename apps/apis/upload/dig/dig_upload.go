@@ -1,7 +1,7 @@
 package dig
 
 import (
-	"lark/apps/apis/upload/internal/service"
+	"GIM/apps/apis/upload/internal/service"
 )
 
 func provideUpload() {

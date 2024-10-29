@@ -1,11 +1,11 @@
 package utils
 
 import (
+	"GIM/pkg/proto/pb_enum"
+	"GIM/pkg/proto/pb_msg"
 	"bytes"
 	"encoding/binary"
 	"encoding/gob"
-	"lark/pkg/proto/pb_enum"
-	"lark/pkg/proto/pb_msg"
 	"unsafe"
 )
 

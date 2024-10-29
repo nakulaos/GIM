@@ -1,12 +1,12 @@
 package user
 
 import (
+	"GIM/apps/user/internal/config"
+	"GIM/apps/user/internal/service"
+	"GIM/pkg/common/xgrpc"
+	"GIM/pkg/proto/pb_user"
 	"google.golang.org/grpc"
 	"io"
-	"lark/apps/user/internal/config"
-	"lark/apps/user/internal/service"
-	"lark/pkg/common/xgrpc"
-	"lark/pkg/proto/pb_user"
 )
 
 type UserServer interface {

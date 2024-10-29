@@ -1,6 +1,6 @@
 package do
 
-import "lark/pkg/proto/pb_enum"
+import "GIM/pkg/proto/pb_enum"
 
 type ChatMemberInfo struct {
 	ChatId   int64               `json:"chat_id"`   // chat ID

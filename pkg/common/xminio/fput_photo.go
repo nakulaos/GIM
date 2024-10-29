@@ -1,7 +1,7 @@
 package xminio
 
 import (
-	"lark/pkg/common/xresize"
+	"GIM/pkg/common/xresize"
 	"sync"
 )
 

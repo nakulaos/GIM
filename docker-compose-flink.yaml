@@ -2,31 +2,31 @@
 # Unable to convert to LocalTime from unexpected value '1648857600000' of type
 version: "3"
 services:
-  lark-flink-sql-client:
-    image: saeipi/lark-flink:1.14.6
-    container_name: lark-flink-sql-client
+  gim-flink-sql-client:
+    image: saeipi/gim-flink:1.14.6
+    container_name: gim-flink-sql-client
     networks:
-      lark-network:
+      gim-network:
         ipv4_address: "192.168.9.140"
     depends_on:
-      - lark-flink-jobmanager
+      - gim-flink-jobmanager
     environment:
-      FLINK_JOBMANAGER_HOST: lark-flink-jobmanager
-  lark-flink-jobmanager:
+      FLINK_JOBMANAGER_HOST: gim-flink-jobmanager
+  gim-flink-jobmanager:
     image: flink:1.14.6-scala_2.11-java8
-    container_name: lark-flink-jobmanager
+    container_name: gim-flink-jobmanager
     expose:
       - "6123"
     ports:
       - "8081:8081"
     networks:
-      lark-network:
+      gim-network:
         ipv4_address: "192.168.9.141"
     volumes:
       - ./configs/docker/flink/job/flink-conf.yaml:/opt/flink/conf/flink-conf.yaml
     command: jobmanager
     environment:
-      - JOB_MANAGER_RPC_ADDRESS=lark-flink-jobmanager
+      - JOB_MANAGER_RPC_ADDRESS=gim-flink-jobmanager
       - TZ=Asia/Shanghai
     deploy:
       resources:
@@ -36,24 +36,24 @@ services:
         reservations:
           cpus: '2'
           memory: 1G
-  lark-flink-taskmanager:
+  gim-flink-taskmanager:
     image: flink:1.14.6-scala_2.11-java8
-    container_name: lark-flink-taskmanager
+    container_name: gim-flink-taskmanager
     expose:
       - "6121"
       - "6122"
     networks:
-      lark-network:
+      gim-network:
         ipv4_address: "192.168.9.142"
     volumes:
       - ./configs/docker/flink/task/flink-conf.yaml:/opt/flink/conf/flink-conf.yaml
     depends_on:
-      - lark-flink-jobmanager
+      - gim-flink-jobmanager
     command: taskmanager
     links:
-      - "lark-flink-jobmanager:lark-flink-jobmanager"
+      - "gim-flink-jobmanager:gim-flink-jobmanager"
     environment:
-      - JOB_MANAGER_RPC_ADDRESS=lark-flink-jobmanager
+      - JOB_MANAGER_RPC_ADDRESS=gim-flink-jobmanager
       - TZ=Asia/Shanghai
     deploy:
       resources:
@@ -65,7 +65,7 @@ services:
           memory: 1G
 
 networks:
-  lark-network:
+  gim-network:
     driver: bridge
     ipam:
       driver: default

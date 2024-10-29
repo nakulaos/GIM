@@ -1,8 +1,8 @@
 package cr_user
 
 import (
-	"lark/domain/cache"
-	"lark/domain/repo"
+	"GIM/domain/cache"
+	"GIM/domain/repo"
 )
 
 func GetUserServerList(userCache cache.UserCache, userRepo repo.UserRepository, uids []int64) (userSrvMaps map[int64]int64, err error) {

@@ -1,13 +1,13 @@
 package service
 
 import (
+	"GIM/domain/do"
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/entity"
+	"GIM/pkg/proto/pb_enum"
+	"GIM/pkg/proto/pb_invite"
 	"context"
 	"github.com/jinzhu/copier"
-	"lark/domain/do"
-	"lark/pkg/common/xlog"
-	"lark/pkg/entity"
-	"lark/pkg/proto/pb_enum"
-	"lark/pkg/proto/pb_invite"
 )
 
 func (s *chatInviteService) ChatInviteList(_ context.Context, req *pb_invite.ChatInviteListReq) (resp *pb_invite.ChatInviteListResp, _ error) {

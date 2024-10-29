@@ -1,13 +1,16 @@
 package service
 
 import (
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/entity"
+	"GIM/pkg/proto/pb_user"
 	"context"
-	"lark/pkg/common/xlog"
-	"lark/pkg/entity"
-	"lark/pkg/proto/pb_user"
 )
 
 func (s *userService) GetUserList(ctx context.Context, req *pb_user.GetUserListReq) (resp *pb_user.GetUserListResp, _ error) {
+	/*
+		1. 批量获取用户信息，只查数据库
+	*/
 	resp = &pb_user.GetUserListResp{List: make([]*pb_user.UserInfo, 0)}
 	var (
 		w   = entity.NewMysqlQuery()

@@ -1,11 +1,11 @@
 package svc_convo
 
 import (
+	"GIM/apps/interfaces/internal/dto/dto_convo"
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/proto/pb_convo"
+	"GIM/pkg/xhttp"
 	"github.com/jinzhu/copier"
-	"lark/apps/interfaces/internal/dto/dto_convo"
-	"lark/pkg/common/xlog"
-	"lark/pkg/proto/pb_convo"
-	"lark/pkg/xhttp"
 )
 
 func (s *convoService) ConvoList(req *dto_convo.ConvoListReq, uid int64) (resp *xhttp.Resp) {

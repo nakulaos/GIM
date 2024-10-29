@@ -1,8 +1,8 @@
 package do
 
 import (
-	"lark/domain/po"
-	"lark/pkg/proto/pb_auth"
+	"GIM/domain/po"
+	"GIM/pkg/proto/pb_auth"
 )
 
 type SignIn struct {

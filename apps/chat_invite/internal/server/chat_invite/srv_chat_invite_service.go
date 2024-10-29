@@ -1,8 +1,8 @@
 package chat_invite
 
 import (
+	"GIM/pkg/proto/pb_invite"
 	"context"
-	"lark/pkg/proto/pb_invite"
 )
 
 func (s *chatInviteServer) InitiateChatInvite(ctx context.Context, req *pb_invite.InitiateChatInviteReq) (resp *pb_invite.InitiateChatInviteResp, err error) {

@@ -1,15 +1,15 @@
 package service
 
 import (
+	"GIM/domain/po"
+	"GIM/pkg/common/xants"
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/entity"
+	"GIM/pkg/proto/pb_chat"
+	"GIM/pkg/proto/pb_chat_member"
+	"GIM/pkg/proto/pb_enum"
+	"GIM/pkg/utils"
 	"context"
-	"lark/domain/po"
-	"lark/pkg/common/xants"
-	"lark/pkg/common/xlog"
-	"lark/pkg/entity"
-	"lark/pkg/proto/pb_chat"
-	"lark/pkg/proto/pb_chat_member"
-	"lark/pkg/proto/pb_enum"
-	"lark/pkg/utils"
 )
 
 func (s *chatService) getChat(chatId int64) (chat *po.Chat, err error) {
@@ -32,6 +32,12 @@ func (s *chatService) getChatMember(chatId int64, uid int64) (member *pb_chat_me
 }
 
 func (s *chatService) RemoveGroupChatMember(ctx context.Context, req *pb_chat.RemoveGroupChatMemberReq) (resp *pb_chat.RemoveGroupChatMemberResp, _ error) {
+	/*
+		1. 判断uid 是否在chat中
+		2. 校验权限移除能移除的
+		3. 发送移除成员消息
+	*/
+
 	resp = new(pb_chat.RemoveGroupChatMemberResp)
 	var (
 		member *pb_chat_member.ChatMemberInfo

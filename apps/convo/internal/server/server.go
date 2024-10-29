@@ -1,8 +1,8 @@
 package server
 
 import (
-	"lark/apps/convo/internal/server/convo"
-	"lark/pkg/commands"
+	"GIM/apps/convo/internal/server/convo"
+	"GIM/pkg/commands"
 )
 
 type server struct {

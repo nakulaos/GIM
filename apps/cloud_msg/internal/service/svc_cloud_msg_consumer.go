@@ -1,11 +1,11 @@
 package service
 
 import (
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/proto/pb_cm"
 	"fmt"
 	"github.com/IBM/sarama"
 	"google.golang.org/protobuf/proto"
-	"lark/pkg/common/xlog"
-	"lark/pkg/proto/pb_cm"
 	"sync/atomic"
 )
 

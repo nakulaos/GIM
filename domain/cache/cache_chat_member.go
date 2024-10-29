@@ -1,14 +1,14 @@
 package cache
 
 import (
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/common/xredis"
+	"GIM/pkg/constant"
+	"GIM/pkg/proto/pb_chat_member"
+	"GIM/pkg/proto/pb_enum"
+	"GIM/pkg/utils"
 	"context"
 	"github.com/spf13/cast"
-	"lark/pkg/common/xlog"
-	"lark/pkg/common/xredis"
-	"lark/pkg/constant"
-	"lark/pkg/proto/pb_chat_member"
-	"lark/pkg/proto/pb_enum"
-	"lark/pkg/utils"
 	"strconv"
 )
 
@@ -78,6 +78,7 @@ func (c *chatMemberCache) SetChatMemberFlag(chatId int64, remainder int, val str
 }
 
 func (c *chatMemberCache) HMSetChatMembers(chatId int64, remainder int, maps map[string]string) (err error) {
+	// 设置某个分片的chat成员列表
 	if len(maps) == 0 {
 		return
 	}
@@ -114,6 +115,11 @@ func (c *chatMemberCache) HSetNXChatMember(chatId int64, chatType pb_enum.CHAT_T
 		field   = cast.ToString(uid)
 		ctx     = context.Background()
 	)
+	/*
+		key: RK_SYNC_DIST_CHAT_MEMBER_HASH : {chatId} : slot（对应分片）
+		field: uid
+		value: mode
+	*/
 	pipe := xredis.Pipeline()
 	pipe.HSetNX(ctx, key1, field, value)
 	pipe.Expire(ctx, key1, constant.CONST_DURATION_DIST_CHAT_MEMBER_HASH_SECOND)

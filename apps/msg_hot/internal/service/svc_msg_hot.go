@@ -1,12 +1,12 @@
 package service
 
 import (
+	"GIM/apps/msg_hot/internal/config"
+	"GIM/domain/mrepo"
+	"GIM/pkg/common/xkafka"
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/obj"
 	"github.com/IBM/sarama"
-	"lark/apps/msg_hot/internal/config"
-	"lark/domain/mrepo"
-	"lark/pkg/common/xkafka"
-	"lark/pkg/common/xlog"
-	"lark/pkg/obj"
 )
 
 type MessageHotService interface {

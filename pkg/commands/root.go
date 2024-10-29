@@ -1,8 +1,8 @@
 package commands
 
 import (
+	_ "GIM/pkg/common/xstat"
 	"errors"
-	_ "lark/pkg/common/xstat"
 	"math/rand"
 	"os"
 	"os/signal"

@@ -1,8 +1,8 @@
 package router
 
 import (
+	"GIM/pkg/middleware"
 	"github.com/gin-gonic/gin"
-	"lark/pkg/middleware"
 )
 
 func Register(engine *gin.Engine) {

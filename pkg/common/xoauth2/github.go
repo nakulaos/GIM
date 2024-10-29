@@ -1,12 +1,12 @@
 package xoauth2
 
 import (
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/conf"
 	"context"
 	"github.com/google/go-github/v57/github"
 	"golang.org/x/oauth2"
 	oauth2github "golang.org/x/oauth2/github"
-	"lark/pkg/common/xlog"
-	"lark/pkg/conf"
 )
 
 func NewGithubOauthConfig(cfg *conf.GithubOAuth2) *oauth2.Config {

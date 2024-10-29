@@ -1,17 +1,23 @@
 package service
 
 import (
+	"GIM/pkg/common/xants"
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/common/xmysql"
+	"GIM/pkg/constant"
+	"GIM/pkg/entity"
+	"GIM/pkg/proto/pb_enum"
+	"GIM/pkg/utils"
 	"gorm.io/gorm"
-	"lark/pkg/common/xants"
-	"lark/pkg/common/xlog"
-	"lark/pkg/common/xmysql"
-	"lark/pkg/constant"
-	"lark/pkg/entity"
-	"lark/pkg/proto/pb_enum"
-	"lark/pkg/utils"
 )
 
 func (s *chatService) removeChatMember(u *entity.MysqlUpdate, chatId int64, uidList []int64, chatType pb_enum.CHAT_TYPE) (rowsAffected int64, err error) {
+	/*
+		注意： 单聊和群聊一样，都是删除聊天成员，只是单聊只有两个成员，群聊有多个成员
+		1. 如果是单聊，删除chat对应的两个成员，如果是群聊，删除chat对应的多个成员
+		2. 缓存删除chat对应的成员信息
+	*/
+
 	var (
 		htk      = utils.GetHashTagKey(chatId)
 		key1     = constant.RK_SYNC_DIST_CHAT_MEMBER_HASH + htk

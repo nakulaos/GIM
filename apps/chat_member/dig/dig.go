@@ -1,13 +1,13 @@
 package dig
 
 import (
+	"GIM/apps/chat_member/internal/config"
+	"GIM/apps/chat_member/internal/server"
+	"GIM/apps/chat_member/internal/server/chat_member"
+	"GIM/apps/chat_member/internal/service"
+	"GIM/domain/cache"
+	"GIM/domain/repo"
 	"go.uber.org/dig"
-	"lark/apps/chat_member/internal/config"
-	"lark/apps/chat_member/internal/server"
-	"lark/apps/chat_member/internal/server/chat_member"
-	"lark/apps/chat_member/internal/service"
-	"lark/domain/cache"
-	"lark/domain/repo"
 	"log"
 )
 

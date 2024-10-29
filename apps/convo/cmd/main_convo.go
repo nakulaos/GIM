@@ -1,11 +1,11 @@
 package main
 
 import (
-	"lark/apps/convo/dig"
-	"lark/apps/convo/internal/config"
-	"lark/pkg/commands"
-	"lark/pkg/common/xmysql"
-	"lark/pkg/common/xredis"
+	"GIM/apps/convo/dig"
+	"GIM/apps/convo/internal/config"
+	"GIM/pkg/commands"
+	"GIM/pkg/common/xmysql"
+	"GIM/pkg/common/xredis"
 )
 
 func init() {

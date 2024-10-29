@@ -1,12 +1,12 @@
 package service
 
 import (
+	"GIM/apps/apis/upload/internal/config"
+	"GIM/apps/apis/upload/internal/dto"
+	chat_client "GIM/apps/chat/client"
+	user_client "GIM/apps/user/client"
+	"GIM/pkg/xhttp"
 	"github.com/gin-gonic/gin"
-	"lark/apps/apis/upload/internal/config"
-	"lark/apps/apis/upload/internal/dto"
-	chat_client "lark/apps/chat/client"
-	user_client "lark/apps/user/client"
-	"lark/pkg/xhttp"
 )
 
 /*

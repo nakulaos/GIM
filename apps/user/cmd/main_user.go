@@ -1,12 +1,12 @@
 package main
 
 import (
-	"lark/apps/user/dig"
-	"lark/apps/user/internal/config"
-	"lark/pkg/commands"
-	"lark/pkg/common/xes"
-	"lark/pkg/common/xmysql"
-	"lark/pkg/common/xredis"
+	"GIM/apps/user/dig"
+	"GIM/apps/user/internal/config"
+	"GIM/pkg/commands"
+	"GIM/pkg/common/xes"
+	"GIM/pkg/common/xmysql"
+	"GIM/pkg/common/xredis"
 )
 
 func init() {

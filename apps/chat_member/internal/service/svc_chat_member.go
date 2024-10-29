@@ -1,13 +1,13 @@
 package service
 
 import (
+	"GIM/apps/chat_member/internal/config"
+	user_client "GIM/apps/user/client"
+	"GIM/domain/cache"
+	"GIM/domain/repo"
+	"GIM/pkg/common/xkafka"
+	"GIM/pkg/proto/pb_chat_member"
 	"context"
-	"lark/apps/chat_member/internal/config"
-	user_client "lark/apps/user/client"
-	"lark/domain/cache"
-	"lark/domain/repo"
-	"lark/pkg/common/xkafka"
-	"lark/pkg/proto/pb_chat_member"
 )
 
 type ChatMemberService interface {

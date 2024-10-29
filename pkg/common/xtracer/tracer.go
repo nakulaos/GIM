@@ -1,11 +1,11 @@
 package xtracer
 
 import (
+	"GIM/pkg/conf"
 	"github.com/opentracing/opentracing-go"
 	"github.com/uber/jaeger-client-go"
 	jaegercfg "github.com/uber/jaeger-client-go/config"
 	"io"
-	"lark/pkg/conf"
 )
 
 /*

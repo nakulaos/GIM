@@ -1,12 +1,12 @@
 package dig
 
 import (
+	"GIM/apps/dist/internal/config"
+	"GIM/apps/dist/internal/server"
+	"GIM/apps/dist/internal/server/dist"
+	"GIM/apps/dist/internal/service"
+	"GIM/domain/cache"
 	"go.uber.org/dig"
-	"lark/apps/dist/internal/config"
-	"lark/apps/dist/internal/server"
-	"lark/apps/dist/internal/server/dist"
-	"lark/apps/dist/internal/service"
-	"lark/domain/cache"
 	"log"
 )
 

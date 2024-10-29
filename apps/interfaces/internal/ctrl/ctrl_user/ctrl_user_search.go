@@ -1,11 +1,11 @@
 package ctrl_user
 
 import (
+	"GIM/apps/interfaces/internal/dto/dto_user"
+	"GIM/pkg/common/xgin"
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/xhttp"
 	"github.com/gin-gonic/gin"
-	"lark/apps/interfaces/internal/dto/dto_user"
-	"lark/pkg/common/xgin"
-	"lark/pkg/common/xlog"
-	"lark/pkg/xhttp"
 )
 
 func (ctrl *UserCtrl) Search(ctx *gin.Context) {

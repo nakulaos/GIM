@@ -1,8 +1,8 @@
 package server
 
 import (
-	"lark/apps/message/internal/server/message"
-	"lark/pkg/commands"
+	"GIM/apps/message/internal/server/message"
+	"GIM/pkg/commands"
 )
 
 type server struct {

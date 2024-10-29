@@ -11,4 +11,4 @@ cp -Rp ./scripts/redis_lua/* ./configs/docker/redis/scripts/
 
 #docker-compose -f docker-compose-elk.yaml up -d
 #docker-compose -f docker-compose-flink.yaml up -d
-docker-compose -f docker-compose-lark.yaml up -d
+docker-compose -f docker-compose-gim.yaml up -d

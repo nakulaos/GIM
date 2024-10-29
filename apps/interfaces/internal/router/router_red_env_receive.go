@@ -1,10 +1,10 @@
 package router
 
 import (
+	"GIM/apps/interfaces/dig"
+	"GIM/apps/interfaces/internal/ctrl/ctrl_red_env_receive"
+	"GIM/apps/interfaces/internal/service/svc_red_env_receive"
 	"github.com/gin-gonic/gin"
-	"lark/apps/interfaces/dig"
-	"lark/apps/interfaces/internal/ctrl/ctrl_red_env_receive"
-	"lark/apps/interfaces/internal/service/svc_red_env_receive"
 )
 
 func registerRedEnvReceiveRouter(group *gin.RouterGroup) {

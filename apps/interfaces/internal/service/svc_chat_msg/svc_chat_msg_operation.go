@@ -1,12 +1,12 @@
 package svc_chat_msg
 
 import (
+	"GIM/apps/interfaces/internal/dto/dto_chat_msg"
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/proto/pb_chat_msg"
+	"GIM/pkg/proto/pb_enum"
+	"GIM/pkg/xhttp"
 	"github.com/jinzhu/copier"
-	"lark/apps/interfaces/internal/dto/dto_chat_msg"
-	"lark/pkg/common/xlog"
-	"lark/pkg/proto/pb_chat_msg"
-	"lark/pkg/proto/pb_enum"
-	"lark/pkg/xhttp"
 )
 
 func (s *chatMessageService) MessageOperation(req *dto_chat_msg.MessageOperationReq, uid int64, platform int32) (resp *xhttp.Resp) {

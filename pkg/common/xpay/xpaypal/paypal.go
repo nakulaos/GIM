@@ -1,10 +1,10 @@
 package xpaypal
 
 import (
+	"GIM/domain/po"
+	"GIM/pkg/conf"
 	"fmt"
 	"github.com/smartwalle/paypal"
-	"lark/domain/po"
-	"lark/pkg/conf"
 	"log/slog"
 )
 

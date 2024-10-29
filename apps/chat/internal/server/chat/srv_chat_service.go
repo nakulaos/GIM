@@ -1,8 +1,8 @@
 package chat
 
 import (
+	"GIM/pkg/proto/pb_chat"
 	"context"
-	"lark/pkg/proto/pb_chat"
 )
 
 func (s *chatServer) CreateGroupChat(ctx context.Context, req *pb_chat.CreateGroupChatReq) (resp *pb_chat.CreateGroupChatResp, err error) {

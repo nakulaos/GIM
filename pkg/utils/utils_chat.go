@@ -1,7 +1,7 @@
 package utils
 
 import (
-	"lark/pkg/constant"
+	"GIM/pkg/constant"
 	"strconv"
 )
 

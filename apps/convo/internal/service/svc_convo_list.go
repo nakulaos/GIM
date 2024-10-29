@@ -1,17 +1,18 @@
 package service
 
 import (
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/common/xredis"
+	"GIM/pkg/constant"
+	"GIM/pkg/proto/pb_convo"
+	"GIM/pkg/utils"
 	"context"
-	"lark/pkg/common/xlog"
-	"lark/pkg/common/xredis"
-	"lark/pkg/constant"
-	"lark/pkg/proto/pb_convo"
-	"lark/pkg/utils"
 	"sort"
 	"strings"
 )
 
 func (s *convoService) ConvoList(ctx context.Context, req *pb_convo.ConvoListReq) (resp *pb_convo.ConvoListResp, _ error) {
+	// 解码数据
 	resp = &pb_convo.ConvoListResp{List: make([]*pb_convo.ConvoMessage, 0)}
 	var (
 		buf    []byte
@@ -48,6 +49,7 @@ func (s *convoService) ConvoList(ctx context.Context, req *pb_convo.ConvoListReq
 		resp.Set(ERROR_CODE_CONVO_PARAM_ERR, ERROR_CONVO_PARAM_ERR)
 		return
 	}
+
 	for _, cid = range cids {
 		cidVal, _ = utils.ToInt64(cid)
 		key = xredis.GetPrefix() + constant.RK_MSG_CONVO_MSG + utils.GetHashTagKey(cidVal)

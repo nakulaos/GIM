@@ -1,9 +1,9 @@
 package gateway
 
 import (
+	"GIM/pkg/proto/pb_gw"
 	"context"
 	"google.golang.org/protobuf/proto"
-	"lark/pkg/proto/pb_gw"
 )
 
 func (s *gatewayServer) MessageHandler(msg []byte, msgKey string) (err error) {

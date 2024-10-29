@@ -1,8 +1,8 @@
 package xmail
 
 import (
+	"GIM/pkg/conf"
 	"gopkg.in/gomail.v2"
-	"lark/pkg/conf"
 )
 
 func NewDialer(cfg *conf.Email) *gomail.Dialer {

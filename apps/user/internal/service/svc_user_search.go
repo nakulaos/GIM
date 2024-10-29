@@ -1,14 +1,14 @@
 package service
 
 import (
+	"GIM/pkg/common/xes"
+	"GIM/pkg/proto/pb_user"
+	"GIM/pkg/utils"
 	"bytes"
 	"context"
 	"encoding/json"
 	"github.com/elastic/go-elasticsearch/v7"
 	"github.com/elastic/go-elasticsearch/v7/esapi"
-	"lark/pkg/common/xes"
-	"lark/pkg/proto/pb_user"
-	"lark/pkg/utils"
 )
 
 func (s *userService) SearchUser(ctx context.Context, req *pb_user.SearchUserReq) (resp *pb_user.SearchUserResp, _ error) {

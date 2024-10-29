@@ -1,9 +1,9 @@
 package gateway
 
 import (
-	"lark/apps/msg_gateway/internal/logic"
-	"lark/pkg/proto/pb_enum"
-	"lark/pkg/proto/pb_gw"
+	"GIM/apps/msg_gateway/internal/logic"
+	"GIM/pkg/proto/pb_enum"
+	"GIM/pkg/proto/pb_gw"
 )
 
 func (s *gatewayServer) sendChatMessage(req *pb_gw.SendTopicMessageReq, resp *pb_gw.SendTopicMessageResp) {

@@ -1,10 +1,10 @@
 package service
 
 import (
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/proto/pb_convo"
+	"GIM/pkg/utils"
 	"context"
-	"lark/pkg/common/xlog"
-	"lark/pkg/proto/pb_convo"
-	"lark/pkg/utils"
 	"strings"
 )
 

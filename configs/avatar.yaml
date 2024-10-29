@@ -1,4 +1,5 @@
 name: lark_avatar_server
+
 server_id: 1
 log: "./configs/logger.yaml"
 grpc_server:

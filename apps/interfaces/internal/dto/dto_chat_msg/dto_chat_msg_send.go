@@ -1,6 +1,6 @@
 package dto_chat_msg
 
-import "lark/pkg/proto/pb_enum"
+import "GIM/pkg/proto/pb_enum"
 
 type SendChatMessageReq struct {
 	ChatId  int64            `json:"chat_id" binding:"required,gt=0"`        // 会话ID

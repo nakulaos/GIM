@@ -1,10 +1,10 @@
 package xgrpc
 
 import (
+	"GIM/pkg/common/xtracer"
+	"GIM/pkg/conf"
 	"github.com/opentracing/opentracing-go"
 	"io"
-	"lark/pkg/common/xtracer"
-	"lark/pkg/conf"
 )
 
 type ClientDialOption struct {

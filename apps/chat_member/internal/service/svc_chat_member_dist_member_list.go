@@ -1,16 +1,17 @@
 package service
 
 import (
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/constant"
+	"GIM/pkg/entity"
+	"GIM/pkg/proto/pb_chat_member"
+	"GIM/pkg/proto/pb_enum"
 	"context"
 	"github.com/spf13/cast"
-	"lark/pkg/common/xlog"
-	"lark/pkg/constant"
-	"lark/pkg/entity"
-	"lark/pkg/proto/pb_chat_member"
-	"lark/pkg/proto/pb_enum"
 )
 
 func (s *chatMemberService) GetDistMemberList(ctx context.Context, req *pb_chat_member.GetDistMemberListReq) (resp *pb_chat_member.GetDistMemberListResp, _ error) {
+	// 主要为了获取chatID，slot且大于上一个last_uid聊天的成员的状态
 	resp = &pb_chat_member.GetDistMemberListResp{}
 	if flag, _ := s.chatMemberCache.GetChatMemberFlag(req.ChatId, int(req.Slot)); flag == constant.RV_SIGN_NULL {
 		resp.Members = map[string]string{}

@@ -1,12 +1,12 @@
 package chat
 
 import (
+	"GIM/apps/chat/internal/config"
+	"GIM/apps/chat/internal/service"
+	"GIM/pkg/common/xgrpc"
+	"GIM/pkg/proto/pb_chat"
 	"google.golang.org/grpc"
 	"io"
-	"lark/apps/chat/internal/config"
-	"lark/apps/chat/internal/service"
-	"lark/pkg/common/xgrpc"
-	"lark/pkg/proto/pb_chat"
 )
 
 type ChatServer interface {

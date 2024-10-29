@@ -1,7 +1,7 @@
 package dto_auth
 
 import (
-	"lark/pkg/proto/pb_enum"
+	"GIM/pkg/proto/pb_enum"
 )
 
 type GithubOauthCallbackReq struct {

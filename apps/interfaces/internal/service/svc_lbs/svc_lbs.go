@@ -1,10 +1,10 @@
 package svc_lbs
 
 import (
-	"lark/apps/interfaces/internal/config"
-	"lark/apps/interfaces/internal/dto/dto_lbs"
-	lbs_client "lark/apps/lbs/client"
-	"lark/pkg/xhttp"
+	"GIM/apps/interfaces/internal/config"
+	"GIM/apps/interfaces/internal/dto/dto_lbs"
+	lbs_client "GIM/apps/lbs/client"
+	"GIM/pkg/xhttp"
 )
 
 type LbsService interface {

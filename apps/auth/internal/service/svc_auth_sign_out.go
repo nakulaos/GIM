@@ -1,9 +1,9 @@
 package service
 
 import (
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/proto/pb_auth"
 	"context"
-	"lark/pkg/common/xlog"
-	"lark/pkg/proto/pb_auth"
 )
 
 func (s *authService) SignOut(ctx context.Context, req *pb_auth.SignOutReq) (resp *pb_auth.SignOutResp, _ error) {
@@ -11,6 +11,8 @@ func (s *authService) SignOut(ctx context.Context, req *pb_auth.SignOutReq) (res
 	var (
 		err error
 	)
+	// 1. 移除ws对应platform的serverId
+	// 2. 移除会话session
 	_, _, err = s.online.UserOnline(req.Uid, 0, req.Platform)
 	if err != nil {
 		resp.Set(ERROR_CODE_AUTH_GRPC_SERVICE_FAILURE, ERROR_AUTH_GRPC_SERVICE_FAILURE)

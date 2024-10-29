@@ -1,13 +1,12 @@
 package service
 
 import (
+	"GIM/apps/msg_gateway/internal/server/websocket/ws"
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/proto/pb_enum"
+	"GIM/pkg/proto/pb_msg"
+	"GIM/pkg/utils"
 	"google.golang.org/protobuf/proto"
-	"lark/apps/msg_gateway/internal/server/websocket/ws"
-	"lark/pkg/common/xlog"
-	"lark/pkg/constant"
-	"lark/pkg/proto/pb_enum"
-	"lark/pkg/proto/pb_msg"
-	"lark/pkg/utils"
 )
 
 func (s *wsService) replyMessage(message *ws.Message, isSrv bool, code int32, msg string) {
@@ -39,8 +38,6 @@ func (s *wsService) MessageCallback(msg *ws.Message) {
 	switch msg.Packet.Topic {
 	case pb_enum.TOPIC_CHAT:
 		s.chatSubtopic(msg)
-	case pb_enum.TOPIC_READ_RECEIPT:
-		s.readReceipt(msg)
 	default:
 		s.replyMessage(msg,
 			false,
@@ -102,17 +99,4 @@ func (s *wsService) sendChatMessage(msg *ws.Message) {
 		xlog.Warn(resp.Code, resp.Msg)
 		return
 	}
-}
-
-func (s *wsService) readReceipt(msg *ws.Message) {
-	var (
-		receipt = new(pb_msg.ReadReceipt)
-		err     error
-	)
-	err = proto.Unmarshal(msg.Packet.Data, receipt)
-	if err != nil {
-		return
-	}
-	receipt.Uid = msg.Uid
-	s.producer.EnQueue(receipt, constant.CONST_MSG_KEY_READ_RECEIPT)
 }

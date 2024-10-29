@@ -1,9 +1,9 @@
 package xresize
 
 import (
+	"GIM/pkg/utils"
 	"image"
 	"io"
-	"lark/pkg/utils"
 	"os"
 	"sync"
 )

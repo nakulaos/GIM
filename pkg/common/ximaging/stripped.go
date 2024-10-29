@@ -1,9 +1,9 @@
 package ximaging
 
 import (
+	"GIM/pkg/common/ximaging/jpeg"
 	"image"
 	"io"
-	"lark/pkg/common/ximaging/jpeg"
 )
 
 func EncodeStripped(w io.Writer, img image.Image, quality int) error {
