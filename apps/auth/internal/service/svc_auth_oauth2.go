@@ -1,18 +1,18 @@
 package service
 
 import (
+	"GIM/domain/do"
+	"GIM/domain/pdo"
+	"GIM/domain/po"
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/common/xmysql"
+	"GIM/pkg/common/xsnowflake"
+	"GIM/pkg/entity"
+	"GIM/pkg/proto/pb_auth"
+	"GIM/pkg/proto/pb_enum"
+	"GIM/pkg/proto/pb_user"
+	"GIM/pkg/utils"
 	"github.com/jinzhu/copier"
-	"lark/domain/do"
-	"lark/domain/pdo"
-	"lark/domain/po"
-	"lark/pkg/common/xlog"
-	"lark/pkg/common/xmysql"
-	"lark/pkg/common/xsnowflake"
-	"lark/pkg/entity"
-	"lark/pkg/proto/pb_auth"
-	"lark/pkg/proto/pb_enum"
-	"lark/pkg/proto/pb_user"
-	"lark/pkg/utils"
 )
 
 func (s *authService) oauth2Logic(user *po.OauthUser, platform pb_enum.PLATFORM_TYPE) (aui *pb_auth.AuthUserInfo, err error) {
@@ -116,8 +116,8 @@ func (s *authService) registerUser(oauthUser *po.OauthUser, platform pb_enum.PLA
 		avatar *po.Avatar
 	)
 	srvId = utils.NewServerId(0, serverId, platform)
-	oauthUser.Uid = xsnowflake.NewSnowflakeID()
-	oauthUser.OauthId = xsnowflake.NewSnowflakeID()
+	oauthUser.Uid = xsnowflake.NewSnowflakeID()     // 生成唯一ID
+	oauthUser.OauthId = xsnowflake.NewSnowflakeID() // 生成唯一ID
 	user = &po.User{
 		Uid:         oauthUser.Uid,
 		LarkId:      xsnowflake.DefaultLarkId(),

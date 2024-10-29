@@ -1,10 +1,10 @@
 package router
 
 import (
+	"GIM/apps/interfaces/dig"
+	"GIM/apps/interfaces/internal/ctrl/ctrl_user"
+	"GIM/apps/interfaces/internal/service/svc_user"
 	"github.com/gin-gonic/gin"
-	"lark/apps/interfaces/dig"
-	"lark/apps/interfaces/internal/ctrl/ctrl_user"
-	"lark/apps/interfaces/internal/service/svc_user"
 )
 
 func registerUserRouter(group *gin.RouterGroup) {

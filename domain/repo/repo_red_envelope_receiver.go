@@ -1,8 +1,8 @@
 package repo
 
 import (
+	"GIM/domain/po"
 	"gorm.io/gorm"
-	"lark/domain/po"
 )
 
 type RedEnvelopeReceiverRepository interface {

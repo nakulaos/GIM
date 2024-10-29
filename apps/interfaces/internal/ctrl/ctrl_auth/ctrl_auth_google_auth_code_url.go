@@ -1,8 +1,8 @@
 package ctrl_auth
 
 import (
+	"GIM/pkg/constant"
 	"github.com/gin-gonic/gin"
-	"lark/pkg/constant"
 	"net/http"
 )
 

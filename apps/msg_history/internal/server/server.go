@@ -1,8 +1,8 @@
 package server
 
 import (
-	"lark/apps/msg_history/internal/server/msg_history"
-	"lark/pkg/commands"
+	"GIM/apps/msg_history/internal/server/msg_history"
+	"GIM/pkg/commands"
 )
 
 type server struct {

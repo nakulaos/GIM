@@ -1,12 +1,12 @@
 package cr_user
 
 import (
-	"lark/domain/cache"
-	"lark/domain/pdo"
-	"lark/domain/repo"
-	"lark/pkg/common/xants"
-	"lark/pkg/entity"
-	"lark/pkg/proto/pb_user"
+	"GIM/domain/cache"
+	"GIM/domain/pdo"
+	"GIM/domain/repo"
+	"GIM/pkg/common/xants"
+	"GIM/pkg/entity"
+	"GIM/pkg/proto/pb_user"
 )
 
 func GetBasicUserInfo(userCache cache.UserCache, userRepo repo.UserRepository, uid int64) (info *pb_user.BasicUserInfo, err error) {

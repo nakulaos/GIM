@@ -1,10 +1,10 @@
 package cr_user
 
 import (
-	"lark/domain/cache"
-	"lark/domain/pdo"
-	"lark/domain/repo"
-	"lark/pkg/entity"
+	"GIM/domain/cache"
+	"GIM/domain/pdo"
+	"GIM/domain/repo"
+	"GIM/pkg/entity"
 )
 
 func GetOauthUserInfo(oauthUserCache cache.OauthUserCache, userRepo repo.OauthUserRepository, uid int64) (info *pdo.OauthUserInfo, err error) {

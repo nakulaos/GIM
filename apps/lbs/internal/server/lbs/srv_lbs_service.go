@@ -1,8 +1,8 @@
 package lbs
 
 import (
+	"GIM/pkg/proto/pb_lbs"
 	"context"
-	"lark/pkg/proto/pb_lbs"
 )
 
 func (s *lbsServer) ReportLngLat(ctx context.Context, req *pb_lbs.ReportLngLatReq) (resp *pb_lbs.ReportLngLatResp, err error) {

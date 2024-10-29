@@ -1,10 +1,10 @@
 package svc_chat
 
 import (
-	chat_client "lark/apps/chat/client"
-	"lark/apps/interfaces/internal/config"
-	"lark/apps/interfaces/internal/dto/dto_chat"
-	"lark/pkg/xhttp"
+	chat_client "GIM/apps/chat/client"
+	"GIM/apps/interfaces/internal/config"
+	"GIM/apps/interfaces/internal/dto/dto_chat"
+	"GIM/pkg/xhttp"
 )
 
 type ChatService interface {

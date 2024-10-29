@@ -1,10 +1,10 @@
 package svc_convo
 
 import (
-	convo_client "lark/apps/convo/client"
-	"lark/apps/interfaces/internal/config"
-	"lark/apps/interfaces/internal/dto/dto_convo"
-	"lark/pkg/xhttp"
+	convo_client "GIM/apps/convo/client"
+	"GIM/apps/interfaces/internal/config"
+	"GIM/apps/interfaces/internal/dto/dto_convo"
+	"GIM/pkg/xhttp"
 )
 
 type ConvoService interface {

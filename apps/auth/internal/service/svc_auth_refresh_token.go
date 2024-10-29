@@ -1,11 +1,11 @@
 package service
 
 import (
+	"GIM/pkg/common/xjwt"
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/constant"
+	"GIM/pkg/proto/pb_auth"
 	"context"
-	"lark/pkg/common/xjwt"
-	"lark/pkg/common/xlog"
-	"lark/pkg/constant"
-	"lark/pkg/proto/pb_auth"
 )
 
 func (s *authService) RefreshToken(ctx context.Context, req *pb_auth.RefreshTokenReq) (resp *pb_auth.RefreshTokenResp, _ error) {
@@ -16,6 +16,12 @@ func (s *authService) RefreshToken(ctx context.Context, req *pb_auth.RefreshToke
 		sessionId    string
 		err          error
 	)
+	/*
+		1. 解析refreshToken
+		2. 获取uid，platform对应sessionId，比较sessionId是否一致
+		3. 生成新的accessToken
+		4. 设置新的accessToken对应sessionId
+	*/
 	refreshToken, err = xjwt.Decode(req.RefreshToken)
 	if err != nil {
 		resp.Set(ERROR_CODE_AUTH_JWT_TOKEN_ERR, ERROR_AUTH_JWT_TOKEN_ERR)

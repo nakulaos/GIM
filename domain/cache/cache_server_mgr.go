@@ -1,8 +1,8 @@
 package cache
 
 import (
-	"lark/pkg/common/xredis"
-	"lark/pkg/constant"
+	"GIM/pkg/common/xredis"
+	"GIM/pkg/constant"
 )
 
 type ServerMgrCache interface {

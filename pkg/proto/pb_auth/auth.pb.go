@@ -7,10 +7,10 @@
 package pb_auth
 
 import (
+	pb_enum "GIM/pkg/proto/pb_enum"
+	pb_user "GIM/pkg/proto/pb_user"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
-	pb_enum "lark/pkg/proto/pb_enum"
-	pb_user "lark/pkg/proto/pb_user"
 	reflect "reflect"
 	sync "sync"
 )

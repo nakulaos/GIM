@@ -1,10 +1,10 @@
 package svc_auth
 
 import (
-	auth_client "lark/apps/auth/client"
-	"lark/apps/interfaces/internal/config"
-	"lark/apps/interfaces/internal/dto/dto_auth"
-	"lark/pkg/xhttp"
+	auth_client "GIM/apps/auth/client"
+	"GIM/apps/interfaces/internal/config"
+	"GIM/apps/interfaces/internal/dto/dto_auth"
+	"GIM/pkg/xhttp"
 )
 
 type AuthService interface {

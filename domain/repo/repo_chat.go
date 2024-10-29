@@ -1,11 +1,11 @@
 package repo
 
 import (
+	"GIM/domain/po"
+	"GIM/pkg/common/xmysql"
+	"GIM/pkg/common/xsnowflake"
+	"GIM/pkg/entity"
 	"gorm.io/gorm"
-	"lark/domain/po"
-	"lark/pkg/common/xmysql"
-	"lark/pkg/common/xsnowflake"
-	"lark/pkg/entity"
 )
 
 type ChatRepository interface {

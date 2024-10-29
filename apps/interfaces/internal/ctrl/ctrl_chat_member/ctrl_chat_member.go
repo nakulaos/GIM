@@ -1,7 +1,7 @@
 package ctrl_chat_member
 
 import (
-	"lark/apps/interfaces/internal/service/svc_chat_member"
+	"GIM/apps/interfaces/internal/service/svc_chat_member"
 )
 
 type ChatMemberCtrl struct {

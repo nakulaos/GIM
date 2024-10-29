@@ -1,7 +1,7 @@
 package dig
 
 import (
-	"lark/domain/cache"
+	"GIM/domain/cache"
 )
 
 func init() {

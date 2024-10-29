@@ -1,10 +1,10 @@
 package xkafka
 
 import (
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/utils"
 	"github.com/IBM/sarama"
 	"google.golang.org/protobuf/proto"
-	"lark/pkg/common/xlog"
-	"lark/pkg/utils"
 	"runtime/debug"
 )
 

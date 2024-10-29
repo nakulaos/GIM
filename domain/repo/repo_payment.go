@@ -1,9 +1,9 @@
 package repo
 
 import (
+	"GIM/domain/po"
+	"GIM/pkg/entity"
 	"gorm.io/gorm"
-	"lark/domain/po"
-	"lark/pkg/entity"
 )
 
 type PaymentRepository interface {

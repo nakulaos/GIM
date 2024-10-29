@@ -1,14 +1,14 @@
 package middleware
 
 import (
+	"GIM/pkg/common/xjwt"
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/common/xredis"
+	"GIM/pkg/constant"
+	"GIM/pkg/utils"
+	"GIM/pkg/xhttp"
 	"github.com/gin-gonic/gin"
 	"github.com/golang-jwt/jwt/v4"
-	"lark/pkg/common/xjwt"
-	"lark/pkg/common/xlog"
-	"lark/pkg/common/xredis"
-	"lark/pkg/constant"
-	"lark/pkg/utils"
-	"lark/pkg/xhttp"
 	"strings"
 )
 

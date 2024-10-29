@@ -1,11 +1,11 @@
 package service
 
 import (
+	"GIM/apps/convo/internal/config"
+	"GIM/domain/cache"
+	"GIM/domain/repo"
+	"GIM/pkg/proto/pb_convo"
 	"context"
-	"lark/apps/convo/internal/config"
-	"lark/domain/cache"
-	"lark/domain/repo"
-	"lark/pkg/proto/pb_convo"
 )
 
 type ConvoService interface {

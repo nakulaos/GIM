@@ -1,11 +1,11 @@
 package config
 
 import (
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/common/xsnowflake"
+	"GIM/pkg/conf"
+	"GIM/pkg/utils"
 	"flag"
-	"lark/pkg/common/xlog"
-	"lark/pkg/common/xsnowflake"
-	"lark/pkg/conf"
-	"lark/pkg/utils"
 )
 
 type Config struct {

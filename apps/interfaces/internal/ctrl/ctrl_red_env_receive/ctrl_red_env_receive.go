@@ -1,7 +1,7 @@
 package ctrl_red_env_receive
 
 import (
-	"lark/apps/interfaces/internal/service/svc_red_env_receive"
+	"GIM/apps/interfaces/internal/service/svc_red_env_receive"
 )
 
 type RedEnvReceiveCtrl struct {

@@ -1,13 +1,12 @@
 package main
 
 import (
+	"GIM/examples/chat/client"
+	"GIM/examples/config"
+	"GIM/pkg/common/xredis"
 	"flag"
-	"lark/examples/chat/client"
-	"lark/examples/config"
-	"lark/pkg/common/xredis"
 	"sync"
 )
-
 
 var (
 	// 起始uid

@@ -1,15 +1,15 @@
 package service
 
 import (
+	"GIM/apps/auth/internal/config"
+	chat_member_client "GIM/apps/chat_member/client"
+	"GIM/business/biz_online"
+	"GIM/domain/cache"
+	"GIM/domain/repo"
+	"GIM/pkg/common/xoauth2"
+	"GIM/pkg/proto/pb_auth"
 	"context"
 	"golang.org/x/oauth2"
-	"lark/apps/auth/internal/config"
-	chat_member_client "lark/apps/chat_member/client"
-	"lark/business/biz_online"
-	"lark/domain/cache"
-	"lark/domain/repo"
-	"lark/pkg/common/xoauth2"
-	"lark/pkg/proto/pb_auth"
 )
 
 type AuthService interface {

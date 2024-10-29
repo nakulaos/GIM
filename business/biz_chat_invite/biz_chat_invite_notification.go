@@ -1,19 +1,19 @@
 package biz_chat_invite
 
 import (
+	"GIM/domain/cache"
+	"GIM/domain/cr/cr_chat"
+	"GIM/domain/cr/cr_user"
+	"GIM/domain/po"
+	"GIM/domain/repo"
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/proto/pb_chat"
+	"GIM/pkg/proto/pb_dist"
+	"GIM/pkg/proto/pb_enum"
+	"GIM/pkg/proto/pb_invite"
+	"GIM/pkg/proto/pb_msg"
+	"GIM/pkg/proto/pb_user"
 	"github.com/jinzhu/copier"
-	"lark/domain/cache"
-	"lark/domain/cr/cr_chat"
-	"lark/domain/cr/cr_user"
-	"lark/domain/po"
-	"lark/domain/repo"
-	"lark/pkg/common/xlog"
-	"lark/pkg/proto/pb_chat"
-	"lark/pkg/proto/pb_dist"
-	"lark/pkg/proto/pb_enum"
-	"lark/pkg/proto/pb_invite"
-	"lark/pkg/proto/pb_msg"
-	"lark/pkg/proto/pb_user"
 )
 
 func ConstructChatInviteNotificationMessage(
@@ -23,6 +23,14 @@ func ConstructChatInviteNotificationMessage(
 	userCache cache.UserCache,
 	chatRepo repo.ChatRepository,
 	userRepo repo.UserRepository) (req *pb_dist.ChatInviteNotificationReq, err error) {
+	/*
+		1. 获取邀请人信息
+		2. 获取被邀请人serverId
+		3. 如果是群聊则获取群信息
+		4. 构建请求参数
+
+
+	*/
 	var (
 		userInfo    *pb_user.BasicUserInfo
 		chatInfo    *pb_chat.ChatInfo

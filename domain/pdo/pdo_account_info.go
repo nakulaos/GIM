@@ -1,6 +1,6 @@
 package pdo
 
-import "lark/pkg/utils"
+import "GIM/pkg/utils"
 
 var (
 	field_tag_account_info string

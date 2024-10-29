@@ -1,10 +1,10 @@
 package main
 
 import (
-	"lark/apps/msg_gateway/dig"
-	"lark/apps/msg_gateway/internal/config"
-	"lark/pkg/commands"
-	"lark/pkg/common/xredis"
+	"GIM/apps/msg_gateway/dig"
+	"GIM/apps/msg_gateway/internal/config"
+	"GIM/pkg/commands"
+	"GIM/pkg/common/xredis"
 	"runtime"
 )
 

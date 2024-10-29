@@ -1,13 +1,14 @@
 package service
 
 import (
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/entity"
+	"GIM/pkg/proto/pb_chat_member"
 	"context"
-	"lark/pkg/common/xlog"
-	"lark/pkg/entity"
-	"lark/pkg/proto/pb_chat_member"
 )
 
 func (s *chatMemberService) GetChatMemberInfo(ctx context.Context, req *pb_chat_member.GetChatMemberInfoReq) (resp *pb_chat_member.GetChatMemberInfoResp, _ error) {
+	// 获取群聊成员的信息
 	resp = &pb_chat_member.GetChatMemberInfoResp{Info: new(pb_chat_member.ChatMemberInfo)}
 	var (
 		w   = entity.NewNormalQuery()

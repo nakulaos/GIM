@@ -1,7 +1,7 @@
 package ctrl_chat_invite
 
 import (
-	"lark/apps/interfaces/internal/service/svc_chat_invite"
+	"GIM/apps/interfaces/internal/service/svc_chat_invite"
 )
 
 type ChatInviteCtrl struct {

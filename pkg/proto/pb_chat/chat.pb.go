@@ -7,10 +7,10 @@
 package pb_chat
 
 import (
+	pb_enum "GIM/pkg/proto/pb_enum"
+	pb_kv "GIM/pkg/proto/pb_kv"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
-	pb_enum "lark/pkg/proto/pb_enum"
-	pb_kv "lark/pkg/proto/pb_kv"
 	reflect "reflect"
 	sync "sync"
 )

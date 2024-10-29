@@ -1,21 +1,21 @@
 package service
 
 import (
+	"GIM/domain/do"
+	"GIM/domain/po"
+	"GIM/pkg/common/xjwt"
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/common/xmysql"
+	"GIM/pkg/common/xsnowflake"
+	"GIM/pkg/constant"
+	"GIM/pkg/entity"
+	"GIM/pkg/proto/pb_auth"
+	"GIM/pkg/proto/pb_enum"
+	"GIM/pkg/proto/pb_user"
+	"GIM/pkg/utils"
 	"context"
 	"github.com/jinzhu/copier"
 	"gorm.io/gorm"
-	"lark/domain/do"
-	"lark/domain/po"
-	"lark/pkg/common/xjwt"
-	"lark/pkg/common/xlog"
-	"lark/pkg/common/xmysql"
-	"lark/pkg/common/xsnowflake"
-	"lark/pkg/constant"
-	"lark/pkg/entity"
-	"lark/pkg/proto/pb_auth"
-	"lark/pkg/proto/pb_enum"
-	"lark/pkg/proto/pb_user"
-	"lark/pkg/utils"
 )
 
 func (s *authService) SignUp(ctx context.Context, req *pb_auth.SignUpReq) (resp *pb_auth.SignUpResp, _ error) {
@@ -27,6 +27,15 @@ func (s *authService) SignUp(ctx context.Context, req *pb_auth.SignUpReq) (resp 
 		err    error
 		signUp *do.SignUp
 	)
+
+	/*
+		1. 获取server
+		2. 密码加密，生成uid,larkId.核查phone是否已经注册
+		3. 使用mysql事务，上传avatar和user，同时生成双token，缓存对应session id
+		4. 缓存uid -> serverId
+
+
+	*/
 	server = s.getWsServer()
 	_ = copier.Copy(user, req)
 	user.Avatar = constant.CONST_AVATAR_SMALL

@@ -1,11 +1,11 @@
 package ws
 
 import (
+	"GIM/pkg/proto/pb_msg"
+	"GIM/pkg/utils"
 	"github.com/gin-gonic/gin"
 	"github.com/gorilla/websocket"
 	"google.golang.org/protobuf/proto"
-	"lark/pkg/proto/pb_msg"
-	"lark/pkg/utils"
 	"log"
 	"runtime/debug"
 	"strconv"

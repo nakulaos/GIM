@@ -1,8 +1,8 @@
 package do
 
 import (
-	"lark/pkg/proto/pb_enum"
-	"lark/pkg/proto/pb_wallet"
+	"GIM/pkg/proto/pb_enum"
+	"GIM/pkg/proto/pb_wallet"
 )
 
 type Wallets struct {

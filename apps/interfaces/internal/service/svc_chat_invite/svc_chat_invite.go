@@ -1,10 +1,10 @@
 package svc_chat_invite
 
 import (
-	chat_invite_client "lark/apps/chat_invite/client"
-	"lark/apps/interfaces/internal/config"
-	"lark/apps/interfaces/internal/dto/dto_chat_invite"
-	"lark/pkg/xhttp"
+	chat_invite_client "GIM/apps/chat_invite/client"
+	"GIM/apps/interfaces/internal/config"
+	"GIM/apps/interfaces/internal/dto/dto_chat_invite"
+	"GIM/pkg/xhttp"
 )
 
 type ChatInviteService interface {

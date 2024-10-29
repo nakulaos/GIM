@@ -1,12 +1,12 @@
 package service
 
 import (
+	"GIM/apps/server_mgr/internal/config"
+	"GIM/domain/cache"
+	"GIM/pkg/common/xetcd"
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/utils"
 	"github.com/spf13/cast"
-	"lark/apps/server_mgr/internal/config"
-	"lark/domain/cache"
-	"lark/pkg/common/xetcd"
-	"lark/pkg/common/xlog"
-	"lark/pkg/utils"
 )
 
 type ServerMgrService interface {

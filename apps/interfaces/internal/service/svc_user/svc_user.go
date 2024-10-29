@@ -1,10 +1,10 @@
 package svc_user
 
 import (
-	"lark/apps/interfaces/internal/config"
-	"lark/apps/interfaces/internal/dto/dto_user"
-	user_client "lark/apps/user/client"
-	"lark/pkg/xhttp"
+	"GIM/apps/interfaces/internal/config"
+	"GIM/apps/interfaces/internal/dto/dto_user"
+	user_client "GIM/apps/user/client"
+	"GIM/pkg/xhttp"
 )
 
 type UserService interface {

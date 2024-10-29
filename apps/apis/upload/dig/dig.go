@@ -1,8 +1,8 @@
 package dig
 
 import (
+	"GIM/apps/apis/upload/internal/config"
 	"go.uber.org/dig"
-	"lark/apps/apis/upload/internal/config"
 	"log"
 )
 

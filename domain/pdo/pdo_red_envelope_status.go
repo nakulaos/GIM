@@ -1,6 +1,6 @@
 package pdo
 
-import "lark/pkg/utils"
+import "GIM/pkg/utils"
 
 var (
 	field_tag_red_envelope_status string

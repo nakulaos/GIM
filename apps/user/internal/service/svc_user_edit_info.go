@@ -1,16 +1,23 @@
 package service
 
 import (
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/common/xmysql"
+	"GIM/pkg/constant"
+	"GIM/pkg/entity"
+	"GIM/pkg/proto/pb_user"
 	"context"
 	"gorm.io/gorm"
-	"lark/pkg/common/xlog"
-	"lark/pkg/common/xmysql"
-	"lark/pkg/constant"
-	"lark/pkg/entity"
-	"lark/pkg/proto/pb_user"
 )
 
 func (s *userService) EditUserInfo(ctx context.Context, req *pb_user.EditUserInfoReq) (resp *pb_user.EditUserInfoResp, _ error) {
+	/*
+		1. 核查账号id，mobile，
+		2. 更新用户信息
+		3. 更新chat member信息
+		4. 删除缓存--- user
+		5. 更新缓存--- 更新每个chat_id的用户信息
+	*/
 	resp = new(pb_user.EditUserInfoResp)
 	var (
 		u        = entity.NewMysqlUpdate()

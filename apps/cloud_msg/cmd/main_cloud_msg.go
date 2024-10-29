@@ -1,11 +1,11 @@
 package main
 
 import (
-	"lark/apps/cloud_msg/dig"
-	"lark/apps/cloud_msg/internal/config"
-	"lark/pkg/commands"
-	"lark/pkg/common/xmysql"
-	"lark/pkg/common/xredis"
+	"GIM/apps/cloud_msg/dig"
+	"GIM/apps/cloud_msg/internal/config"
+	"GIM/pkg/commands"
+	"GIM/pkg/common/xmysql"
+	"GIM/pkg/common/xredis"
 )
 
 func init() {

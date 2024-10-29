@@ -1,9 +1,9 @@
 package ctrl_payment
 
 import (
+	"GIM/apps/interfaces/internal/service/svc_payment"
+	"GIM/pkg/xhttp"
 	"github.com/gin-gonic/gin"
-	"lark/apps/interfaces/internal/service/svc_payment"
-	"lark/pkg/xhttp"
 )
 
 type PaymentCtrl struct {

@@ -1,11 +1,11 @@
 package server
 
 import (
+	"GIM/apps/interfaces/internal/config"
+	"GIM/apps/interfaces/internal/router"
+	"GIM/pkg/commands"
+	"GIM/pkg/common/xgin"
 	"flag"
-	"lark/apps/interfaces/internal/config"
-	"lark/apps/interfaces/internal/router"
-	"lark/pkg/commands"
-	"lark/pkg/common/xgin"
 )
 
 type server struct {

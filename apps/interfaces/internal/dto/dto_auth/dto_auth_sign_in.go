@@ -1,8 +1,8 @@
 package dto_auth
 
 import (
-	"lark/apps/interfaces/internal/dto/dto_user"
-	"lark/pkg/proto/pb_enum"
+	"GIM/apps/interfaces/internal/dto/dto_user"
+	"GIM/pkg/proto/pb_enum"
 )
 
 type SignInReq struct {

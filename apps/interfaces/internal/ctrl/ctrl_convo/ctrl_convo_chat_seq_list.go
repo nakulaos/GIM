@@ -1,11 +1,11 @@
 package ctrl_convo
 
 import (
+	"GIM/apps/interfaces/internal/dto/dto_convo"
+	"GIM/pkg/common/xgin"
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/xhttp"
 	"github.com/gin-gonic/gin"
-	"lark/apps/interfaces/internal/dto/dto_convo"
-	"lark/pkg/common/xgin"
-	"lark/pkg/common/xlog"
-	"lark/pkg/xhttp"
 )
 
 func (ctrl *ConvoCtrl) ConvoChatSeqList(ctx *gin.Context) {

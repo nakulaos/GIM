@@ -1,9 +1,9 @@
 package cache
 
 import (
-	"lark/pkg/common/xredis"
-	"lark/pkg/constant"
-	"lark/pkg/utils"
+	"GIM/pkg/common/xredis"
+	"GIM/pkg/constant"
+	"GIM/pkg/utils"
 )
 
 // 弃用

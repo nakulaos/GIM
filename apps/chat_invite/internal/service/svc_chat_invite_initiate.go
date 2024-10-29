@@ -1,26 +1,37 @@
 package service
 
 import (
+	"GIM/business/biz_chat_invite"
+	"GIM/domain/po"
+	"GIM/pkg/common/xants"
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/common/xsnowflake"
+	"GIM/pkg/entity"
+	"GIM/pkg/proto/pb_dist"
+	"GIM/pkg/proto/pb_enum"
+	"GIM/pkg/proto/pb_invite"
 	"context"
 	"github.com/jinzhu/copier"
-	"lark/business/biz_chat_invite"
-	"lark/domain/po"
-	"lark/pkg/common/xants"
-	"lark/pkg/common/xlog"
-	"lark/pkg/common/xsnowflake"
-	"lark/pkg/entity"
-	"lark/pkg/proto/pb_dist"
-	"lark/pkg/proto/pb_enum"
-	"lark/pkg/proto/pb_invite"
 )
 
 func (s *chatInviteService) InitiateChatInvite(_ context.Context, req *pb_invite.InitiateChatInviteReq) (resp *pb_invite.InitiateChatInviteResp, _ error) {
+	/*
+		聊天邀请发起
+		1. 条件校验
+			-- 私聊邀请只能邀请一个
+			-- 群聊校验邀请人是否已经在群聊中
+		2. 入库，邀请
+
+	*/
+
 	resp = new(pb_invite.InitiateChatInviteResp)
 	var (
 		invite = new(po.ChatInvite)
 		w      = entity.NewMysqlQuery()
 		err    error
 	)
+
+	// 参数校验
 	switch req.ChatType {
 	case pb_enum.CHAT_TYPE_PRIVATE:
 		var (

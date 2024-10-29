@@ -1,19 +1,19 @@
 package service
 
 import (
+	"GIM/apps/apis/upload/internal/dto"
+	"GIM/pkg/common/xants"
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/common/xminio"
+	"GIM/pkg/common/xresize"
+	"GIM/pkg/constant"
+	"GIM/pkg/proto/pb_chat"
+	"GIM/pkg/proto/pb_enum"
+	"GIM/pkg/proto/pb_user"
+	"GIM/pkg/utils"
+	"GIM/pkg/xhttp"
 	"github.com/gin-gonic/gin"
 	"github.com/jinzhu/copier"
-	"lark/apps/apis/upload/internal/dto"
-	"lark/pkg/common/xants"
-	"lark/pkg/common/xlog"
-	"lark/pkg/common/xminio"
-	"lark/pkg/common/xresize"
-	"lark/pkg/constant"
-	"lark/pkg/proto/pb_chat"
-	"lark/pkg/proto/pb_enum"
-	"lark/pkg/proto/pb_user"
-	"lark/pkg/utils"
-	"lark/pkg/xhttp"
 	"mime/multipart"
 )
 

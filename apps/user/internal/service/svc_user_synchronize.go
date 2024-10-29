@@ -1,11 +1,11 @@
 package service
 
 import (
+	"GIM/pkg/constant"
+	"GIM/pkg/entity"
+	"GIM/pkg/proto/pb_chat_member"
+	"GIM/pkg/utils"
 	"github.com/spf13/cast"
-	"lark/pkg/constant"
-	"lark/pkg/entity"
-	"lark/pkg/proto/pb_chat_member"
-	"lark/pkg/utils"
 )
 
 func (s *userService) updateChatMemberCacheInfo(uid int64) (err error) {
@@ -42,6 +42,9 @@ func (s *userService) updateChatMemberCacheInfo(uid int64) (err error) {
 	if len(keys) == 0 {
 		return
 	}
+	// key 是  "CHAT:MEMBER_INFO_HASH:" + chatId 某个聊天的id
+	// field 是 uid
+	// val 是 ChatMemberInfo 的 序列化
 	err = s.chatMemberCache.HSetDistChatMembers(keys, uidStr, vals)
 	if err != nil {
 		//r.Set(ERROR_CODE_USER_CACHE_CHAT_MEMBER_INFO_FAILED, ERROR_USER_CACHE_CHAT_MEMBER_INFO_FAILED)

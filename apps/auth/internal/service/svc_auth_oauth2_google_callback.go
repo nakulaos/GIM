@@ -1,14 +1,14 @@
 package service
 
 import (
+	"GIM/domain/do"
+	"GIM/domain/po"
+	"GIM/pkg/proto/pb_auth"
+	"GIM/pkg/proto/pb_enum"
+	"GIM/pkg/xhttp"
 	"context"
 	"encoding/json"
 	"golang.org/x/oauth2"
-	"lark/domain/do"
-	"lark/domain/po"
-	"lark/pkg/proto/pb_auth"
-	"lark/pkg/proto/pb_enum"
-	"lark/pkg/xhttp"
 )
 
 /*

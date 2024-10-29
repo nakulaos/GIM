@@ -1,14 +1,14 @@
 package cache
 
 import (
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/common/xredis"
+	"GIM/pkg/constant"
+	"GIM/pkg/proto/pb_enum"
+	"GIM/pkg/proto/pb_user"
+	"GIM/pkg/utils"
 	"context"
 	"github.com/spf13/cast"
-	"lark/pkg/common/xlog"
-	"lark/pkg/common/xredis"
-	"lark/pkg/constant"
-	"lark/pkg/proto/pb_enum"
-	"lark/pkg/proto/pb_user"
-	"lark/pkg/utils"
 	"sync"
 )
 
@@ -144,6 +144,7 @@ func (c *userCache) SignOut(uid int64, platform pb_enum.PLATFORM_TYPE) (err erro
 		key1        = constant.RK_SYNC_USER_ACCESS_TOKEN_SESSION_ID + htk + ":" + platformStr
 		key2        = constant.RK_SYNC_USER_REFRESH_TOKEN_SESSION_ID + htk + ":" + platformStr
 	)
+	// redis unlink 后台删除，不会阻塞客户端
 	err = xredis.CUnlink([]string{key1, key2})
 	if err != nil {
 		return

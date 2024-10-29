@@ -1,12 +1,12 @@
 package dig
 
 import (
+	"GIM/apps/msg_hot/internal/config"
+	"GIM/apps/msg_hot/internal/server"
+	"GIM/apps/msg_hot/internal/server/msg_hot"
+	"GIM/apps/msg_hot/internal/service"
+	"GIM/domain/mrepo"
 	"go.uber.org/dig"
-	"lark/apps/msg_hot/internal/config"
-	"lark/apps/msg_hot/internal/server"
-	"lark/apps/msg_hot/internal/server/msg_hot"
-	"lark/apps/msg_hot/internal/service"
-	"lark/domain/mrepo"
 	"log/slog"
 )
 

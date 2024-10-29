@@ -1,14 +1,19 @@
 package service
 
 import (
+	"GIM/pkg/common/xants"
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/entity"
+	"GIM/pkg/proto/pb_user"
 	"context"
-	"lark/pkg/common/xants"
-	"lark/pkg/common/xlog"
-	"lark/pkg/entity"
-	"lark/pkg/proto/pb_user"
 )
 
 func (s *userService) GetBasicUserInfoList(ctx context.Context, req *pb_user.GetBasicUserInfoListReq) (resp *pb_user.GetBasicUserInfoListResp, err error) {
+	/*
+		1. 查询用户基本信息列表
+		2. 缓存基本信息列表
+	*/
+
 	resp = &pb_user.GetBasicUserInfoListResp{List: make([]*pb_user.BasicUserInfo, 0)}
 	var (
 		w = entity.NewMysqlQuery()

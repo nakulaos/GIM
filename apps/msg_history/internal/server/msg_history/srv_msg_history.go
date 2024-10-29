@@ -1,7 +1,7 @@
 package msg_history
 
 import (
-	"lark/apps/msg_history/internal/service"
+	"GIM/apps/msg_history/internal/service"
 )
 
 type MessageHistoryServer interface {

@@ -1,14 +1,14 @@
 package service
 
 import (
+	"GIM/domain/po"
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/proto/pb_auth"
+	"GIM/pkg/proto/pb_enum"
 	"context"
 	"fmt"
 	"github.com/google/go-github/v57/github"
 	"golang.org/x/oauth2"
-	"lark/domain/po"
-	"lark/pkg/common/xlog"
-	"lark/pkg/proto/pb_auth"
-	"lark/pkg/proto/pb_enum"
 	"strconv"
 )
 
@@ -28,6 +28,10 @@ func (s *authService) GithubOAuth2Callback(ctx context.Context, req *pb_auth.Git
 			xlog.Warn(resp.Code, resp.Msg, err.Error())
 		}
 	}()
+	// 1. 通过授权码获取token
+	// 2. 通过token获取用户信息
+	// 3. 判断用户有没有注册过，没有就注册，有就更新第三方access_token,refresh_token,scope,expired等
+
 	token, err = s.getToken(req.Code)
 	if err != nil {
 		resp.Set(ERROR_CODE_AUTH_OAUTH_TOKEN_ACQUISITION_FAILED, ERROR_AUTH_OAUTH_TOKEN_ACQUISITION_FAILED)

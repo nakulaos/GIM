@@ -1,8 +1,8 @@
 package chat_msg
 
 import (
+	"GIM/pkg/proto/pb_chat_msg"
 	"context"
-	"lark/pkg/proto/pb_chat_msg"
 )
 
 func (s *chatMessageServer) GetChatMessageList(ctx context.Context, req *pb_chat_msg.GetChatMessageListReq) (resp *pb_chat_msg.GetChatMessageListResp, err error) {

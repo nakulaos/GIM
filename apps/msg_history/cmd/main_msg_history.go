@@ -1,11 +1,11 @@
 package main
 
 import (
-	"lark/apps/msg_history/dig"
-	"lark/apps/msg_history/internal/config"
-	"lark/pkg/commands"
-	"lark/pkg/common/xmysql"
-	"lark/pkg/common/xredis"
+	"GIM/apps/msg_history/dig"
+	"GIM/apps/msg_history/internal/config"
+	"GIM/pkg/commands"
+	"GIM/pkg/common/xmysql"
+	"GIM/pkg/common/xredis"
 )
 
 func init() {

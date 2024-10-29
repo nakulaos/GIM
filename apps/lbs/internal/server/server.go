@@ -1,8 +1,8 @@
 package server
 
 import (
-	"lark/apps/lbs/internal/server/lbs"
-	"lark/pkg/commands"
+	"GIM/apps/lbs/internal/server/lbs"
+	"GIM/pkg/commands"
 )
 
 type server struct {

@@ -1,10 +1,10 @@
 package ctrl_auth
 
 import (
+	"GIM/apps/interfaces/internal/dto/dto_auth"
+	"GIM/pkg/proto/pb_enum"
+	"GIM/pkg/xhttp"
 	"github.com/gin-gonic/gin"
-	"lark/apps/interfaces/internal/dto/dto_auth"
-	"lark/pkg/proto/pb_enum"
-	"lark/pkg/xhttp"
 )
 
 // 测试示例 lark/examples/github_oauth2/main.go

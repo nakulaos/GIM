@@ -1,12 +1,12 @@
 package repo
 
 import (
+	"GIM/domain/po"
+	"GIM/pkg/common/xmysql"
+	"GIM/pkg/common/xsnowflake"
+	"GIM/pkg/entity"
+	"GIM/pkg/proto/pb_user"
 	"gorm.io/gorm"
-	"lark/domain/po"
-	"lark/pkg/common/xmysql"
-	"lark/pkg/common/xsnowflake"
-	"lark/pkg/entity"
-	"lark/pkg/proto/pb_user"
 )
 
 type UserRepository interface {

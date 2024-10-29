@@ -1,6 +1,6 @@
 package pdo_order
 
-import "lark/pkg/utils"
+import "GIM/pkg/utils"
 
 type OrderStatus struct {
 	OrderId     uint64 `json:"order_id" field:"order_id"`

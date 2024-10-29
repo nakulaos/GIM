@@ -1,7 +1,7 @@
 package pdo
 
 import (
-	"lark/pkg/utils"
+	"GIM/pkg/utils"
 )
 
 var (

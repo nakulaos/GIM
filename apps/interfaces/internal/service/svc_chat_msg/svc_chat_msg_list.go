@@ -1,13 +1,13 @@
 package svc_chat_msg
 
 import (
+	"GIM/apps/interfaces/internal/dto/dto_chat_msg"
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/constant"
+	"GIM/pkg/proto/pb_chat_msg"
+	"GIM/pkg/utils"
+	"GIM/pkg/xhttp"
 	"github.com/jinzhu/copier"
-	"lark/apps/interfaces/internal/dto/dto_chat_msg"
-	"lark/pkg/common/xlog"
-	"lark/pkg/constant"
-	"lark/pkg/proto/pb_chat_msg"
-	"lark/pkg/utils"
-	"lark/pkg/xhttp"
 	"strings"
 )
 

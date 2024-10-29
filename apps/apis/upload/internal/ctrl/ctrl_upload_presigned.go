@@ -1,11 +1,11 @@
 package ctrl
 
 import (
+	"GIM/apps/apis/upload/internal/dto"
+	"GIM/pkg/common/xgin"
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/xhttp"
 	"github.com/gin-gonic/gin"
-	"lark/apps/apis/upload/internal/dto"
-	"lark/pkg/common/xgin"
-	"lark/pkg/common/xlog"
-	"lark/pkg/xhttp"
 )
 
 func (ctrl *UploadCtrl) Presigned(ctx *gin.Context) {

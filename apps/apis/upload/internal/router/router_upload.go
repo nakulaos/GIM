@@ -1,10 +1,10 @@
 package router
 
 import (
+	"GIM/apps/apis/upload/dig"
+	"GIM/apps/apis/upload/internal/ctrl"
+	"GIM/apps/apis/upload/internal/service"
 	"github.com/gin-gonic/gin"
-	"lark/apps/apis/upload/dig"
-	"lark/apps/apis/upload/internal/ctrl"
-	"lark/apps/apis/upload/internal/service"
 )
 
 func registerUploadRouter(group *gin.RouterGroup) {

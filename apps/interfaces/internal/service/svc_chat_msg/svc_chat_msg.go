@@ -1,11 +1,11 @@
 package svc_chat_msg
 
 import (
-	"lark/apps/chat_msg/client"
-	"lark/apps/interfaces/internal/config"
-	"lark/apps/interfaces/internal/dto/dto_chat_msg"
-	msg_client "lark/apps/message/client"
-	"lark/pkg/xhttp"
+	"GIM/apps/chat_msg/client"
+	"GIM/apps/interfaces/internal/config"
+	"GIM/apps/interfaces/internal/dto/dto_chat_msg"
+	msg_client "GIM/apps/message/client"
+	"GIM/pkg/xhttp"
 )
 
 type ChatMessageService interface {

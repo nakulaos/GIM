@@ -1,18 +1,25 @@
 package service
 
 import (
+	"GIM/domain/po"
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/proto/pb_chat_msg"
+	"GIM/pkg/proto/pb_enum"
+	"GIM/pkg/proto/pb_msg"
+	"GIM/pkg/utils"
 	"context"
 	"github.com/jinzhu/copier"
-	"lark/domain/po"
-	"lark/pkg/common/xlog"
-	"lark/pkg/proto/pb_chat_msg"
-	"lark/pkg/proto/pb_enum"
-	"lark/pkg/proto/pb_msg"
-	"lark/pkg/utils"
 	"sort"
 )
 
 func (s *chatMessageService) GetChatMessageList(ctx context.Context, req *pb_chat_msg.GetChatMessageListReq) (resp *pb_chat_msg.GetChatMessageListResp, _ error) {
+
+	/*
+		1. 确定最大的消息边界
+		2. 看看请求的时间有没有超过缓存的,没有就从缓存拿
+		3. 缓存拿完之后，缺的从数据库拿
+		4. 返回最新的seq
+	*/
 	resp = &pb_chat_msg.GetChatMessageListResp{Msgs: &pb_chat_msg.ChatMessages{List: make([]*pb_msg.SrvChatMessage, 0)}}
 	var (
 		length    = len(req.SeqIds)

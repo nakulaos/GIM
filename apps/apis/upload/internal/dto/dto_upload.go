@@ -1,7 +1,7 @@
 package dto
 
 import (
-	"lark/pkg/proto/pb_enum"
+	"GIM/pkg/proto/pb_enum"
 )
 
 type UploadAvatarReq struct {

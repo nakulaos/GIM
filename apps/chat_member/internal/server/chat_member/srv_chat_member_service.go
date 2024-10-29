@@ -1,8 +1,8 @@
 package chat_member
 
 import (
+	"GIM/pkg/proto/pb_chat_member"
 	"context"
-	"lark/pkg/proto/pb_chat_member"
 )
 
 func (s *chatMemberServer) GetChatMemberInfo(ctx context.Context, req *pb_chat_member.GetChatMemberInfoReq) (resp *pb_chat_member.GetChatMemberInfoResp, err error) {

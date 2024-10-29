@@ -1,13 +1,13 @@
 package cr_rad_env
 
 import (
-	"lark/domain/cache"
-	"lark/domain/pdo"
-	"lark/domain/repo"
-	"lark/pkg/entity"
-	"lark/pkg/proto/pb_enum"
-	"lark/pkg/proto/pb_red_env"
-	"lark/pkg/utils"
+	"GIM/domain/cache"
+	"GIM/domain/pdo"
+	"GIM/domain/repo"
+	"GIM/pkg/entity"
+	"GIM/pkg/proto/pb_enum"
+	"GIM/pkg/proto/pb_red_env"
+	"GIM/pkg/utils"
 )
 
 func GetRedEnvelopeInfo(redEnvCache cache.RedEnvelopeCache, redEnvRepo repo.RedEnvelopeRepository, envId int64) (info *pb_red_env.RedEnvelopeInfo, err error) {

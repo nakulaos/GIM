@@ -1,8 +1,8 @@
 package server_mgr
 
 import (
-	"lark/apps/server_mgr/internal/config"
-	"lark/apps/server_mgr/internal/service"
+	"GIM/apps/server_mgr/internal/config"
+	"GIM/apps/server_mgr/internal/service"
 )
 
 type ServerMgrServer interface {

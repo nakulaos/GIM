@@ -1,6 +1,6 @@
 package ws
 
-import "lark/pkg/proto/pb_msg"
+import "GIM/pkg/proto/pb_msg"
 
 type Message struct {
 	Uid      int64 // 用户ID

@@ -1,16 +1,16 @@
 package service
 
 import (
+	"GIM/apps/chat_member/client"
+	"GIM/apps/dist/internal/config"
+	gw_client "GIM/apps/msg_gateway/client"
+	"GIM/domain/cache"
+	"GIM/pkg/common/xetcd"
+	"GIM/pkg/common/xkafka"
+	"GIM/pkg/obj"
+	"GIM/pkg/proto/pb_dist"
 	"context"
 	"github.com/IBM/sarama"
-	"lark/apps/chat_member/client"
-	"lark/apps/dist/internal/config"
-	gw_client "lark/apps/msg_gateway/client"
-	"lark/domain/cache"
-	"lark/pkg/common/xetcd"
-	"lark/pkg/common/xkafka"
-	"lark/pkg/obj"
-	"lark/pkg/proto/pb_dist"
 	"sync"
 )
 

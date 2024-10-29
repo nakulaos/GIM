@@ -1,11 +1,11 @@
 package main
 
 import (
-	"lark/apps/msg_hot/dig"
-	"lark/apps/msg_hot/internal/config"
-	"lark/pkg/commands"
-	"lark/pkg/common/xmongo"
-	"lark/pkg/common/xredis"
+	"GIM/apps/msg_hot/dig"
+	"GIM/apps/msg_hot/internal/config"
+	"GIM/pkg/commands"
+	"GIM/pkg/common/xmongo"
+	"GIM/pkg/common/xredis"
 )
 
 // 弃用

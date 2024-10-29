@@ -1,8 +1,8 @@
 package server
 
 import (
-	"lark/apps/cloud_msg/internal/server/cloud_msg"
-	"lark/pkg/commands"
+	"GIM/apps/cloud_msg/internal/server/cloud_msg"
+	"GIM/pkg/commands"
 )
 
 type server struct {

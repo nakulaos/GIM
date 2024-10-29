@@ -1,12 +1,12 @@
 package ws
 
 import (
+	"GIM/pkg/common/xgin"
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/conf"
+	"GIM/pkg/middleware"
+	"GIM/pkg/utils"
 	"go.uber.org/zap"
-	"lark/pkg/common/xgin"
-	"lark/pkg/common/xlog"
-	"lark/pkg/conf"
-	"lark/pkg/middleware"
-	"lark/pkg/utils"
 )
 
 var (

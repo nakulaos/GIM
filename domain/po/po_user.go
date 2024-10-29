@@ -1,7 +1,7 @@
 package po
 
 import (
-	"lark/pkg/entity"
+	"GIM/pkg/entity"
 )
 
 type User struct {

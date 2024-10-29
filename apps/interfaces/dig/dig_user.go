@@ -1,7 +1,7 @@
 package dig
 
 import (
-	"lark/apps/interfaces/internal/service/svc_user"
+	"GIM/apps/interfaces/internal/service/svc_user"
 )
 
 func init() {

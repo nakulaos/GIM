@@ -1,8 +1,8 @@
 package convo
 
 import (
+	"GIM/pkg/proto/pb_convo"
 	"context"
-	"lark/pkg/proto/pb_convo"
 )
 
 func (s *convoServer) ConvoList(ctx context.Context, req *pb_convo.ConvoListReq) (resp *pb_convo.ConvoListResp, err error) {

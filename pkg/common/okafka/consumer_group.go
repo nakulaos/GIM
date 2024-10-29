@@ -1,9 +1,9 @@
 package okafka
 
 import (
+	"GIM/pkg/common/xlog"
 	"context"
 	"github.com/IBM/sarama"
-	"lark/pkg/common/xlog"
 )
 
 type MConsumerGroup struct {

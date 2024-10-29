@@ -1,11 +1,11 @@
 package ctrl_chat_invite
 
 import (
+	"GIM/apps/interfaces/internal/dto/dto_chat_invite"
+	"GIM/pkg/common/xgin"
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/xhttp"
 	"github.com/gin-gonic/gin"
-	"lark/apps/interfaces/internal/dto/dto_chat_invite"
-	"lark/pkg/common/xgin"
-	"lark/pkg/common/xlog"
-	"lark/pkg/xhttp"
 )
 
 func (ctrl *ChatInviteCtrl) ChatInviteList(ctx *gin.Context) {

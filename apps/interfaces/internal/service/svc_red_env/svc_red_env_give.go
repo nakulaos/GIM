@@ -1,11 +1,11 @@
 package svc_red_env
 
 import (
+	"GIM/apps/interfaces/internal/dto/dto_red_env"
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/proto/pb_red_env"
+	"GIM/pkg/xhttp"
 	"github.com/jinzhu/copier"
-	"lark/apps/interfaces/internal/dto/dto_red_env"
-	"lark/pkg/common/xlog"
-	"lark/pkg/proto/pb_red_env"
-	"lark/pkg/xhttp"
 )
 
 func (s *redEnvService) GiveRedEnvelope(params *dto_red_env.GiveRedEnvelopeReq, uid int64) (resp *xhttp.Resp) {

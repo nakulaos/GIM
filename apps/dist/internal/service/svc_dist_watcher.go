@@ -1,14 +1,14 @@
 package service
 
 import (
+	gw_client "GIM/apps/msg_gateway/client"
+	"GIM/pkg/common/xetcd"
+	"GIM/pkg/common/xkafka"
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/conf"
+	"GIM/pkg/utils"
 	"github.com/jinzhu/copier"
 	"github.com/spf13/cast"
-	gw_client "lark/apps/msg_gateway/client"
-	"lark/pkg/common/xetcd"
-	"lark/pkg/common/xkafka"
-	"lark/pkg/common/xlog"
-	"lark/pkg/conf"
-	"lark/pkg/utils"
 )
 
 func (s *distService) watchMsgGatewayServer() {

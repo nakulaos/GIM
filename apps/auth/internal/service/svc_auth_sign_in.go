@@ -1,15 +1,15 @@
 package service
 
 import (
+	"GIM/domain/do"
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/entity"
+	"GIM/pkg/proto/pb_auth"
+	"GIM/pkg/proto/pb_enum"
+	"GIM/pkg/proto/pb_user"
+	"GIM/pkg/utils"
 	"context"
 	"github.com/jinzhu/copier"
-	"lark/domain/do"
-	"lark/pkg/common/xlog"
-	"lark/pkg/entity"
-	"lark/pkg/proto/pb_auth"
-	"lark/pkg/proto/pb_enum"
-	"lark/pkg/proto/pb_user"
-	"lark/pkg/utils"
 )
 
 func (s *authService) SignIn(ctx context.Context, req *pb_auth.SignInReq) (resp *pb_auth.SignInResp, _ error) {
@@ -19,6 +19,14 @@ func (s *authService) SignIn(ctx context.Context, req *pb_auth.SignInReq) (resp 
 		signIn *do.SignIn
 		server *pb_auth.ServerInfo
 	)
+
+	/*
+		1. 根据登录类型，获取用户信息
+		2. 核查密码
+		3. 生成token和获取头像
+		4. 获取ws server并更新server id 缓存
+		5. 返回用户信息和token
+	*/
 	switch req.AccountType {
 	case pb_enum.ACCOUNT_TYPE_MOBILE:
 		q.SetFilter("mobile = ?", req.Account)
@@ -37,6 +45,7 @@ func (s *authService) SignIn(ctx context.Context, req *pb_auth.SignInReq) (resp 
 		return
 	}
 	server = s.getWsServer()
+	// 更新server id
 	_, _, err := s.online.UserOnline(signIn.User.Uid, int64(server.ServerId), req.Platform)
 	if err != nil {
 		resp.Set(ERROR_CODE_AUTH_GRPC_SERVICE_FAILURE, ERROR_AUTH_GRPC_SERVICE_FAILURE)

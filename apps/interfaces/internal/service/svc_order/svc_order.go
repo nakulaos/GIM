@@ -1,10 +1,10 @@
 package svc_order
 
 import (
-	"lark/apps/interfaces/internal/config"
-	"lark/apps/interfaces/internal/dto/dto_order"
-	order_client "lark/apps/order/client"
-	"lark/pkg/xhttp"
+	"GIM/apps/interfaces/internal/config"
+	"GIM/apps/interfaces/internal/dto/dto_order"
+	order_client "GIM/apps/order/client"
+	"GIM/pkg/xhttp"
 )
 
 type OrderService interface {

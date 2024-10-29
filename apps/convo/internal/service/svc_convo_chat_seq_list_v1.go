@@ -1,13 +1,14 @@
 package service
 
 import (
+	"GIM/pkg/entity"
+	"GIM/pkg/proto/pb_convo"
+	"GIM/pkg/proto/pb_enum"
 	"context"
-	"lark/pkg/entity"
-	"lark/pkg/proto/pb_convo"
-	"lark/pkg/proto/pb_enum"
 )
 
 func (s *convoService) ConvoChatSeqList(ctx context.Context, req *pb_convo.ConvoChatSeqListReq) (resp *pb_convo.ConvoChatSeqListResp, _ error) {
+	// 主要作用是返回指定uid的用户的状态消息读取列表
 	resp = &pb_convo.ConvoChatSeqListResp{List: make([]*pb_convo.ConvoChatSeq, 0)}
 	var (
 		q = entity.NewNormalQuery()

@@ -1,15 +1,19 @@
 package service
 
 import (
+	"GIM/domain/pdo"
+	"GIM/pkg/common/xants"
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/entity"
+	"GIM/pkg/proto/pb_user"
 	"context"
-	"lark/domain/pdo"
-	"lark/pkg/common/xants"
-	"lark/pkg/common/xlog"
-	"lark/pkg/entity"
-	"lark/pkg/proto/pb_user"
 )
 
 func (s *userService) GetBasicUserInfo(ctx context.Context, req *pb_user.GetBasicUserInfoReq) (resp *pb_user.GetBasicUserInfoResp, _ error) {
+	/*
+		1. 查询用户基本信息
+		2. 缓存基本信息
+	*/
 	resp = &pb_user.GetBasicUserInfoResp{UserInfo: &pb_user.BasicUserInfo{}}
 	var (
 		user = new(pdo.BasicUserInfo)

@@ -1,6 +1,8 @@
 package main
 
 import (
+	"GIM/pkg/constant"
+	"GIM/pkg/utils"
 	"bytes"
 	"database/sql"
 	"fmt"
@@ -9,8 +11,6 @@ import (
 	"golang.org/x/text/language"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
-	"lark/pkg/constant"
-	"lark/pkg/utils"
 	"log"
 	"os"
 	"regexp"

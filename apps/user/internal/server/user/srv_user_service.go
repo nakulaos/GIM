@@ -1,8 +1,8 @@
 package user
 
 import (
+	"GIM/pkg/proto/pb_user"
 	"context"
-	"lark/pkg/proto/pb_user"
 )
 
 func (s *userServer) EditUserInfo(ctx context.Context, req *pb_user.EditUserInfoReq) (resp *pb_user.EditUserInfoResp, err error) {

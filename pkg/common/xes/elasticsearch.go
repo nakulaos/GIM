@@ -1,11 +1,11 @@
 package xes
 
 import (
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/conf"
 	"github.com/elastic/go-elasticsearch/v7"
 	"github.com/elastic/go-elasticsearch/v7/esapi"
 	"io/ioutil"
-	"lark/pkg/common/xlog"
-	"lark/pkg/conf"
 )
 
 var (

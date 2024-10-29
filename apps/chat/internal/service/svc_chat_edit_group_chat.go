@@ -1,18 +1,24 @@
 package service
 
 import (
+	"GIM/domain/po"
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/common/xmysql"
+	"GIM/pkg/entity"
+	"GIM/pkg/proto/pb_chat"
+	"GIM/pkg/proto/pb_chat_member"
+	"GIM/pkg/proto/pb_enum"
 	"context"
 	"gorm.io/gorm"
-	"lark/domain/po"
-	"lark/pkg/common/xlog"
-	"lark/pkg/common/xmysql"
-	"lark/pkg/entity"
-	"lark/pkg/proto/pb_chat"
-	"lark/pkg/proto/pb_chat_member"
-	"lark/pkg/proto/pb_enum"
 )
 
 func (s *chatService) EditGroupChat(ctx context.Context, req *pb_chat.EditGroupChatReq) (resp *pb_chat.EditGroupChatResp, _ error) {
+	/*
+		1. 判断是否有权利修改
+		2. 修改chat信息，name或者about
+		3. 如果修改了name，更新chat_member表中的chat_name
+		4. 如果修改了name或者about，删除chat缓存
+	*/
 	resp = &pb_chat.EditGroupChatResp{}
 	var (
 		w      = entity.NewMysqlQuery()

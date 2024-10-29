@@ -1,8 +1,8 @@
 package gateway
 
 import (
+	"GIM/pkg/proto/pb_cm"
 	"fmt"
-	"lark/pkg/proto/pb_cm"
 )
 
 func (s *gatewayServer) SendCloudMessage(req *pb_cm.CloudMessageReq) {

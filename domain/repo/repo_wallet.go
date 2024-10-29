@@ -1,12 +1,12 @@
 package repo
 
 import (
+	"GIM/domain/pdo"
+	"GIM/domain/po"
+	"GIM/pkg/common/xmysql"
+	"GIM/pkg/entity"
+	"GIM/pkg/proto/pb_wallet"
 	"gorm.io/gorm"
-	"lark/domain/pdo"
-	"lark/domain/po"
-	"lark/pkg/common/xmysql"
-	"lark/pkg/entity"
-	"lark/pkg/proto/pb_wallet"
 )
 
 type WalletRepository interface {

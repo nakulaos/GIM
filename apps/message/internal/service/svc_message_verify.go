@@ -1,9 +1,9 @@
 package service
 
 import (
+	"GIM/pkg/proto/pb_enum"
+	"GIM/pkg/proto/pb_msg"
 	"google.golang.org/protobuf/proto"
-	"lark/pkg/proto/pb_enum"
-	"lark/pkg/proto/pb_msg"
 )
 
 func (s *messageService) verifyMessage(req *pb_msg.SendChatMessageReq) (assocId int64, err error) {

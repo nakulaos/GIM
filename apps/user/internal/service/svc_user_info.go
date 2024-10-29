@@ -1,18 +1,21 @@
 package service
 
 import (
+	"GIM/domain/pdo"
+	"GIM/domain/po"
+	"GIM/pkg/common/xants"
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/entity"
+	"GIM/pkg/proto/pb_enum"
+	"GIM/pkg/proto/pb_user"
 	"context"
 	"github.com/jinzhu/copier"
-	"lark/domain/pdo"
-	"lark/domain/po"
-	"lark/pkg/common/xants"
-	"lark/pkg/common/xlog"
-	"lark/pkg/entity"
-	"lark/pkg/proto/pb_enum"
-	"lark/pkg/proto/pb_user"
 )
 
 func (s *userService) GetUserInfo(ctx context.Context, req *pb_user.UserInfoReq) (resp *pb_user.UserInfoResp, _ error) {
+	/*
+		1. 通过旁路缓存获取用户信息
+	*/
 	resp = &pb_user.UserInfoResp{}
 	var (
 		err error

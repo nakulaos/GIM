@@ -1,12 +1,12 @@
 package lbs
 
 import (
+	"GIM/apps/lbs/internal/config"
+	"GIM/apps/lbs/internal/service"
+	"GIM/pkg/common/xgrpc"
+	"GIM/pkg/proto/pb_lbs"
 	"google.golang.org/grpc"
 	"io"
-	"lark/apps/lbs/internal/config"
-	"lark/apps/lbs/internal/service"
-	"lark/pkg/common/xgrpc"
-	"lark/pkg/proto/pb_lbs"
 )
 
 type LbsServer interface {

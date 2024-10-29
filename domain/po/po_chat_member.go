@@ -1,6 +1,6 @@
 package po
 
-import "lark/pkg/entity"
+import "GIM/pkg/entity"
 
 type ChatMember struct {
 	entity.GormEntityTs

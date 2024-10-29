@@ -1,9 +1,9 @@
 package xgin
 
 import (
+	"GIM/pkg/xhttp"
 	"github.com/gin-gonic/gin"
 	"github.com/go-playground/validator/v10"
-	"lark/pkg/xhttp"
 )
 
 func BindJSON(ctx *gin.Context, params interface{}) (err error) {

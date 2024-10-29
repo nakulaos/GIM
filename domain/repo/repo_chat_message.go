@@ -1,10 +1,10 @@
 package repo
 
 import (
+	"GIM/domain/po"
+	"GIM/pkg/common/xmysql"
+	"GIM/pkg/entity"
 	"gorm.io/gorm"
-	"lark/domain/po"
-	"lark/pkg/common/xmysql"
-	"lark/pkg/entity"
 )
 
 type ChatMessageRepository interface {

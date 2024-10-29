@@ -1,14 +1,14 @@
 package dig
 
 import (
+	"GIM/apps/chat_msg/internal/config"
+	"GIM/apps/chat_msg/internal/server"
+	"GIM/apps/chat_msg/internal/server/chat_msg"
+	"GIM/apps/chat_msg/internal/service"
+	"GIM/domain/cache"
+	"GIM/domain/mrepo"
+	"GIM/domain/repo"
 	"go.uber.org/dig"
-	"lark/apps/chat_msg/internal/config"
-	"lark/apps/chat_msg/internal/server"
-	"lark/apps/chat_msg/internal/server/chat_msg"
-	"lark/apps/chat_msg/internal/service"
-	"lark/domain/cache"
-	"lark/domain/mrepo"
-	"lark/domain/repo"
 	"log"
 )
 

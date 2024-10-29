@@ -1,11 +1,11 @@
 package svc_user
 
 import (
-	"lark/apps/interfaces/internal/dto/dto_user"
-	"lark/pkg/common/xlog"
-	"lark/pkg/proto/pb_user"
-	"lark/pkg/utils"
-	"lark/pkg/xhttp"
+	"GIM/apps/interfaces/internal/dto/dto_user"
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/proto/pb_user"
+	"GIM/pkg/utils"
+	"GIM/pkg/xhttp"
 )
 
 func (s *userService) UserList(params *dto_user.UserListReq) (resp *xhttp.Resp) {

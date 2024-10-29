@@ -1,10 +1,10 @@
 package router
 
 import (
+	"GIM/apps/interfaces/dig"
+	"GIM/apps/interfaces/internal/ctrl/ctrl_payment"
+	"GIM/apps/interfaces/internal/service/svc_payment"
 	"github.com/gin-gonic/gin"
-	"lark/apps/interfaces/dig"
-	"lark/apps/interfaces/internal/ctrl/ctrl_payment"
-	"lark/apps/interfaces/internal/service/svc_payment"
 )
 
 func registerPaymentRouter(group *gin.RouterGroup) {

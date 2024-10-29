@@ -1,17 +1,18 @@
 package biz_online
 
 import (
+	"GIM/domain/cache"
+	"GIM/domain/repo"
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/entity"
+	"GIM/pkg/proto/pb_enum"
+	"GIM/pkg/proto/pb_user"
+	"GIM/pkg/utils"
 	"github.com/spf13/cast"
-	"lark/domain/cache"
-	"lark/domain/repo"
-	"lark/pkg/common/xlog"
-	"lark/pkg/entity"
-	"lark/pkg/proto/pb_enum"
-	"lark/pkg/proto/pb_user"
-	"lark/pkg/utils"
 )
 
 type Online interface {
+	// UserOnline 用户上线 更新uid -> serverId
 	UserOnline(uid int64, serverId int64, platform pb_enum.PLATFORM_TYPE) (srvId int64, next bool, err error)
 }
 

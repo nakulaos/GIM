@@ -1,21 +1,27 @@
 package service
 
 import (
+	"GIM/pkg/common/xants"
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/common/xsnowflake"
+	"GIM/pkg/constant"
+	"GIM/pkg/entity"
+	"GIM/pkg/proto/pb_chat"
+	"GIM/pkg/proto/pb_chat_member"
+	"GIM/pkg/proto/pb_enum"
+	"GIM/pkg/proto/pb_mq"
+	"GIM/pkg/proto/pb_msg"
+	"GIM/pkg/utils"
 	"context"
-	"lark/pkg/common/xants"
-	"lark/pkg/common/xlog"
-	"lark/pkg/common/xsnowflake"
-	"lark/pkg/constant"
-	"lark/pkg/entity"
-	"lark/pkg/proto/pb_chat"
-	"lark/pkg/proto/pb_chat_member"
-	"lark/pkg/proto/pb_enum"
-	"lark/pkg/proto/pb_mq"
-	"lark/pkg/proto/pb_msg"
-	"lark/pkg/utils"
+	"google.golang.org/protobuf/proto"
 )
 
 func (s *chatService) QuitGroupChat(ctx context.Context, req *pb_chat.QuitGroupChatReq) (resp *pb_chat.QuitGroupChatResp, _ error) {
+	/*
+		1. 退出群聊
+		2. 发送退出群聊消息,推送到消息队列，所有群成员会收到
+	*/
+
 	resp = new(pb_chat.QuitGroupChatResp)
 	var (
 		u   = entity.NewMysqlUpdate()
@@ -92,14 +98,13 @@ func (s *chatService) quitGroupChatMessage(chatId int64, uidList []int64, subTop
 		return
 	}
 	msg.Body = []byte(jsonStr)
-
 	inbox = &pb_mq.InboxMessage{
 		Topic:    pb_enum.TOPIC_CHAT,
 		SubTopic: subTopic,
-		Msg:      msg,
 	}
+	inbox.Body, _ = proto.Marshal(msg)
 	// 将消息推送到kafka消息队列
-	_, _, err = s.producer.EnQueue(inbox, constant.CONST_MSG_KEY_MSG)
+	_, _, err = s.producer.EnQueue(inbox, constant.CONST_MSG_KEY_MSG+utils.GetChatPartition(chatId))
 	if err != nil {
 		xlog.Warn(ERROR_CODE_CHAT_ENQUEUE_FAILED, ERROR_CHAT_ENQUEUE_FAILED, err.Error())
 		return

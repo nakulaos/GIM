@@ -1,12 +1,12 @@
 package service
 
 import (
+	"GIM/apps/lbs/internal/config"
+	"GIM/domain/cache"
+	"GIM/domain/mrepo"
+	"GIM/domain/repo"
+	"GIM/pkg/proto/pb_lbs"
 	"context"
-	"lark/apps/lbs/internal/config"
-	"lark/domain/cache"
-	"lark/domain/mrepo"
-	"lark/domain/repo"
-	"lark/pkg/proto/pb_lbs"
 )
 
 type LbsService interface {

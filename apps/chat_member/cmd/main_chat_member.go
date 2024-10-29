@@ -1,11 +1,11 @@
 package main
 
 import (
-	"lark/apps/chat_member/dig"
-	"lark/apps/chat_member/internal/config"
-	"lark/pkg/commands"
-	"lark/pkg/common/xmysql"
-	"lark/pkg/common/xredis"
+	"GIM/apps/chat_member/dig"
+	"GIM/apps/chat_member/internal/config"
+	"GIM/pkg/commands"
+	"GIM/pkg/common/xmysql"
+	"GIM/pkg/common/xredis"
 )
 
 func init() {

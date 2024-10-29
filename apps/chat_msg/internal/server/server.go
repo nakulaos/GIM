@@ -1,8 +1,8 @@
 package server
 
 import (
-	"lark/apps/chat_msg/internal/server/chat_msg"
-	"lark/pkg/commands"
+	"GIM/apps/chat_msg/internal/server/chat_msg"
+	"GIM/pkg/commands"
 )
 
 type server struct {

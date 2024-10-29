@@ -1,10 +1,10 @@
 package service
 
 import (
+	"GIM/apps/cloud_msg/internal/config"
+	"GIM/pkg/common/xkafka"
+	"GIM/pkg/obj"
 	"github.com/IBM/sarama"
-	"lark/apps/cloud_msg/internal/config"
-	"lark/pkg/common/xkafka"
-	"lark/pkg/obj"
 )
 
 type CloudMessageService interface {

@@ -1,6 +1,6 @@
 package xalipay
 
-import "lark/pkg/utils"
+import "GIM/pkg/utils"
 
 type TradeBody struct {
 	TradeNo   string `json:"trade_no"`

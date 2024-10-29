@@ -1,8 +1,8 @@
 package repo
 
 import (
-	"lark/domain/po"
-	"lark/pkg/common/xmysql"
+	"GIM/domain/po"
+	"GIM/pkg/common/xmysql"
 )
 
 type UserLocationRepository interface {

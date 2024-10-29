@@ -1,13 +1,13 @@
 package cr_wallet
 
 import (
-	"lark/domain/cache"
-	"lark/domain/pdo"
-	"lark/domain/repo"
-	"lark/pkg/constant"
-	"lark/pkg/entity"
-	"lark/pkg/proto/pb_enum"
-	"lark/pkg/proto/pb_wallet"
+	"GIM/domain/cache"
+	"GIM/domain/pdo"
+	"GIM/domain/repo"
+	"GIM/pkg/constant"
+	"GIM/pkg/entity"
+	"GIM/pkg/proto/pb_enum"
+	"GIM/pkg/proto/pb_wallet"
 )
 
 func GetAccountInfoByWalletId(walletCache cache.WalletCache, walletRepo repo.WalletRepository, walletId int64) (info *pb_wallet.AccountInfo, err error) {

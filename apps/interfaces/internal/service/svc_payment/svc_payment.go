@@ -1,8 +1,8 @@
 package svc_payment
 
 import (
-	"lark/apps/interfaces/internal/config"
-	payment_client "lark/apps/payment/client"
+	"GIM/apps/interfaces/internal/config"
+	payment_client "GIM/apps/payment/client"
 )
 
 type PaymentService interface {

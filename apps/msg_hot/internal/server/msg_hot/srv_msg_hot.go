@@ -1,6 +1,6 @@
 package msg_hot
 
-import "lark/apps/msg_hot/internal/service"
+import "GIM/apps/msg_hot/internal/service"
 
 type MessageHotServer interface {
 	Run()

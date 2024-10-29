@@ -1,13 +1,13 @@
 package ctrl
 
 import (
+	"GIM/apps/apis/upload/internal/dto"
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/constant"
+	"GIM/pkg/proto/pb_enum"
+	"GIM/pkg/utils"
+	"GIM/pkg/xhttp"
 	"github.com/gin-gonic/gin"
-	"lark/apps/apis/upload/internal/dto"
-	"lark/pkg/common/xlog"
-	"lark/pkg/constant"
-	"lark/pkg/proto/pb_enum"
-	"lark/pkg/utils"
-	"lark/pkg/xhttp"
 )
 
 func (ctrl *UploadCtrl) UploadAvatar(ctx *gin.Context) {

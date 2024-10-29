@@ -1,10 +1,10 @@
 package main
 
 import (
-	"lark/apps/message/dig"
-	"lark/apps/message/internal/config"
-	"lark/pkg/commands"
-	"lark/pkg/common/xredis"
+	"GIM/apps/message/dig"
+	"GIM/apps/message/internal/config"
+	"GIM/pkg/commands"
+	"GIM/pkg/common/xredis"
 )
 
 func init() {

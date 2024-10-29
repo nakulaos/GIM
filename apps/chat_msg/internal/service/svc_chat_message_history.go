@@ -1,9 +1,9 @@
 package service
 
 import (
-	"lark/domain/po"
-	"lark/pkg/entity"
-	"lark/pkg/proto/pb_chat_msg"
+	"GIM/domain/po"
+	"GIM/pkg/entity"
+	"GIM/pkg/proto/pb_chat_msg"
 )
 
 func (s *chatMessageService) GetHistoryMessages(req *pb_chat_msg.GetChatMessagesReq) (list []*po.Message, err error) {

@@ -7,9 +7,9 @@
 package pb_order
 
 import (
+	pb_enum "GIM/pkg/proto/pb_enum"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
-	pb_enum "lark/pkg/proto/pb_enum"
 	reflect "reflect"
 	sync "sync"
 )

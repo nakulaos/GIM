@@ -1,11 +1,11 @@
 package service
 
 import (
+	msg_client "GIM/apps/message/client"
+	"GIM/apps/msg_gateway/internal/config"
+	"GIM/apps/msg_gateway/internal/server/websocket/ws"
+	"GIM/pkg/common/xkafka"
 	"github.com/go-playground/validator/v10"
-	msg_client "lark/apps/message/client"
-	"lark/apps/msg_gateway/internal/config"
-	"lark/apps/msg_gateway/internal/server/websocket/ws"
-	"lark/pkg/common/xkafka"
 )
 
 type WsService interface {

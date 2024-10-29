@@ -1,7 +1,7 @@
 package ctrl_user
 
 import (
-	"lark/apps/interfaces/internal/service/svc_user"
+	"GIM/apps/interfaces/internal/service/svc_user"
 )
 
 type UserCtrl struct {

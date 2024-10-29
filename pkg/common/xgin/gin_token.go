@@ -1,10 +1,10 @@
 package xgin
 
 import (
+	"GIM/pkg/common/xjwt"
+	"GIM/pkg/utils"
 	"github.com/gin-gonic/gin"
 	"github.com/golang-jwt/jwt/v4"
-	"lark/pkg/common/xjwt"
-	"lark/pkg/utils"
 )
 
 func GetToken(ctx *gin.Context) (token string, expire int64) {

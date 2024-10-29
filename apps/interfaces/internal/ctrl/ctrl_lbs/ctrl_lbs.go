@@ -1,7 +1,7 @@
 package ctrl_lbs
 
 import (
-	"lark/apps/interfaces/internal/service/svc_lbs"
+	"GIM/apps/interfaces/internal/service/svc_lbs"
 )
 
 type LbsCtrl struct {

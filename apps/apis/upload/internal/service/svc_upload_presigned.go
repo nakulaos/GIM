@@ -1,12 +1,12 @@
 package service
 
 import (
+	"GIM/apps/apis/upload/internal/dto"
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/common/xminio"
+	"GIM/pkg/utils"
+	"GIM/pkg/xhttp"
 	"github.com/gin-gonic/gin"
-	"lark/apps/apis/upload/internal/dto"
-	"lark/pkg/common/xlog"
-	"lark/pkg/common/xminio"
-	"lark/pkg/utils"
-	"lark/pkg/xhttp"
 	"net/url"
 )
 

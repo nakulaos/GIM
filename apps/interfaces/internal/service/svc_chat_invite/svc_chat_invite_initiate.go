@@ -1,11 +1,11 @@
 package svc_chat_invite
 
 import (
+	"GIM/apps/interfaces/internal/dto/dto_chat_invite"
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/proto/pb_invite"
+	"GIM/pkg/xhttp"
 	"github.com/jinzhu/copier"
-	"lark/apps/interfaces/internal/dto/dto_chat_invite"
-	"lark/pkg/common/xlog"
-	"lark/pkg/proto/pb_invite"
-	"lark/pkg/xhttp"
 )
 
 func (s *chatInviteService) InitiateChatInvite(params *dto_chat_invite.InitiateChatInviteReq, uid int64) (resp *xhttp.Resp) {

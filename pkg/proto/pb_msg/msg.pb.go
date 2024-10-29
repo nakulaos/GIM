@@ -7,12 +7,12 @@
 package pb_msg
 
 import (
+	pb_chat "GIM/pkg/proto/pb_chat"
+	pb_chat_member "GIM/pkg/proto/pb_chat_member"
+	pb_enum "GIM/pkg/proto/pb_enum"
+	pb_invite "GIM/pkg/proto/pb_invite"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
-	pb_chat "lark/pkg/proto/pb_chat"
-	pb_chat_member "lark/pkg/proto/pb_chat_member"
-	pb_enum "lark/pkg/proto/pb_enum"
-	pb_invite "lark/pkg/proto/pb_invite"
 	reflect "reflect"
 	sync "sync"
 )
@@ -189,7 +189,7 @@ type CliChatMessage struct {
 	ChatId int64 `protobuf:"varint,4,opt,name=chat_id,json=chatId,proto3" json:"chat_id,omitempty" validate:"required,gt=0"` // 会话ID
 	// @inject_tag: validate:"required,gt=0"
 	MsgType pb_enum.MSG_TYPE `protobuf:"varint,5,opt,name=msg_type,json=msgType,proto3,enum=pb_enum.MSG_TYPE" json:"msg_type,omitempty" validate:"required,gt=0"` // 消息类型
-	Body    []byte           `protobuf:"bytes,6,opt,name=body,proto3" json:"body,omitempty"`                                             // 消息本体
+	Body    []byte           `protobuf:"bytes,6,opt,name=body,proto3" json:"body,omitempty"`                                                                      // 消息本体
 	// @inject_tag: validate:"required,gt=0"
 	SentTs int64 `protobuf:"varint,7,opt,name=sent_ts,json=sentTs,proto3" json:"sent_ts,omitempty" validate:"required,gt=0"` // 客户端本地发送时间
 }
@@ -841,7 +841,7 @@ type GiveRedEnvelope struct {
 	// @inject_tag: validate:"required,gt=0"
 	Quantity int32 `protobuf:"varint,7,opt,name=quantity,proto3" json:"quantity,omitempty" validate:"required,gt=0"` // 红包数量
 	// @inject_tag: validate:"required"
-	Message      string  `protobuf:"bytes,8,opt,name=message,proto3" json:"message,omitempty" validate:"required"`                                       // 祝福语
+	Message      string  `protobuf:"bytes,8,opt,name=message,proto3" json:"message,omitempty" validate:"required"`                   // 祝福语
 	ReceiverUids []int64 `protobuf:"varint,9,rep,packed,name=receiver_uids,json=receiverUids,proto3" json:"receiver_uids,omitempty"` // 接收者ID
 	// @inject_tag: validate:"required,gt=0"
 	ExpiredTs int64 `protobuf:"varint,10,opt,name=expired_ts,json=expiredTs,proto3" json:"expired_ts,omitempty" validate:"required,gt=0"` // 红包过期时间

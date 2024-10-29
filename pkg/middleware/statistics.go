@@ -1,9 +1,9 @@
 package middleware
 
 import (
+	"GIM/pkg/common/xredis"
+	"GIM/pkg/constant"
 	"github.com/gin-gonic/gin"
-	"lark/pkg/common/xredis"
-	"lark/pkg/constant"
 )
 
 func Statistics() gin.HandlerFunc {

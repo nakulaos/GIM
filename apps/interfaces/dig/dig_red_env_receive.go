@@ -1,7 +1,7 @@
 package dig
 
 import (
-	"lark/apps/interfaces/internal/service/svc_red_env_receive"
+	"GIM/apps/interfaces/internal/service/svc_red_env_receive"
 )
 
 func init() {

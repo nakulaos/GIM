@@ -1,11 +1,11 @@
 package service
 
 import (
+	"GIM/apps/user/internal/config"
+	"GIM/domain/cache"
+	"GIM/domain/repo"
+	"GIM/pkg/proto/pb_user"
 	"context"
-	"lark/apps/user/internal/config"
-	"lark/domain/cache"
-	"lark/domain/repo"
-	"lark/pkg/proto/pb_user"
 )
 
 type UserService interface {

@@ -1,10 +1,10 @@
 package xgin
 
 import (
+	"GIM/pkg/constant"
+	"GIM/pkg/utils"
+	"GIM/pkg/xhttp"
 	"github.com/gin-gonic/gin"
-	"lark/pkg/constant"
-	"lark/pkg/utils"
-	"lark/pkg/xhttp"
 )
 
 func GetUid(ctx *gin.Context) (uid int64) {

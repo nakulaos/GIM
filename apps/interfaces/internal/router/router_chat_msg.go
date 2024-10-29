@@ -1,10 +1,10 @@
 package router
 
 import (
+	"GIM/apps/interfaces/dig"
+	"GIM/apps/interfaces/internal/ctrl/ctrl_chat_msg"
+	"GIM/apps/interfaces/internal/service/svc_chat_msg"
 	"github.com/gin-gonic/gin"
-	"lark/apps/interfaces/dig"
-	"lark/apps/interfaces/internal/ctrl/ctrl_chat_msg"
-	"lark/apps/interfaces/internal/service/svc_chat_msg"
 )
 
 func registerChatMessageRouter(group *gin.RouterGroup) {

@@ -1,13 +1,13 @@
 package service
 
 import (
+	chat_member_client "GIM/apps/chat_member/client"
+	"GIM/apps/message/internal/config"
+	"GIM/domain/cache"
+	"GIM/pkg/common/xkafka"
+	"GIM/pkg/proto/pb_msg"
 	"context"
 	"github.com/go-playground/validator/v10"
-	chat_member_client "lark/apps/chat_member/client"
-	"lark/apps/message/internal/config"
-	"lark/domain/cache"
-	"lark/pkg/common/xkafka"
-	"lark/pkg/proto/pb_msg"
 )
 
 type MessageService interface {

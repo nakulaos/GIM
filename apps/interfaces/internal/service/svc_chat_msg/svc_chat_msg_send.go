@@ -1,14 +1,14 @@
 package svc_chat_msg
 
 import (
+	"GIM/apps/interfaces/internal/dto/dto_chat_msg"
+	"GIM/pkg/common/xlog"
+	"GIM/pkg/common/xsnowflake"
+	"GIM/pkg/proto/pb_enum"
+	"GIM/pkg/proto/pb_msg"
+	"GIM/pkg/utils"
+	"GIM/pkg/xhttp"
 	"github.com/jinzhu/copier"
-	"lark/apps/interfaces/internal/dto/dto_chat_msg"
-	"lark/pkg/common/xlog"
-	"lark/pkg/common/xsnowflake"
-	"lark/pkg/proto/pb_enum"
-	"lark/pkg/proto/pb_msg"
-	"lark/pkg/utils"
-	"lark/pkg/xhttp"
 )
 
 func (s *chatMessageService) SendChatMessage(req *dto_chat_msg.SendChatMessageReq, uid int64, platform int32) (resp *xhttp.Resp) {

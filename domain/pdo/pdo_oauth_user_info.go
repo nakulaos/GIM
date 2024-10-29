@@ -1,6 +1,6 @@
 package pdo
 
-import "lark/pkg/utils"
+import "GIM/pkg/utils"
 
 type OauthUserInfo struct {
 	Uid      int64  `json:"uid" field:"uid"`

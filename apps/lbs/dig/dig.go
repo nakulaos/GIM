@@ -1,14 +1,14 @@
 package dig
 
 import (
+	"GIM/apps/lbs/internal/config"
+	"GIM/apps/lbs/internal/server"
+	"GIM/apps/lbs/internal/server/lbs"
+	"GIM/apps/lbs/internal/service"
+	"GIM/domain/cache"
+	"GIM/domain/mrepo"
+	"GIM/domain/repo"
 	"go.uber.org/dig"
-	"lark/apps/lbs/internal/config"
-	"lark/apps/lbs/internal/server"
-	"lark/apps/lbs/internal/server/lbs"
-	"lark/apps/lbs/internal/service"
-	"lark/domain/cache"
-	"lark/domain/mrepo"
-	"lark/domain/repo"
 	"log"
 )
 

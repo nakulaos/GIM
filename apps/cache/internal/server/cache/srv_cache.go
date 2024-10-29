@@ -1,8 +1,8 @@
 package srv_cache
 
 import (
-	"lark/apps/cache/internal/config"
-	"lark/apps/cache/internal/service"
+	"GIM/apps/cache/internal/config"
+	"GIM/apps/cache/internal/service"
 )
 
 type CacheServer interface {

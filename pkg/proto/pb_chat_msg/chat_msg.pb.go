@@ -7,10 +7,10 @@
 package pb_chat_msg
 
 import (
+	pb_enum "GIM/pkg/proto/pb_enum"
+	pb_msg "GIM/pkg/proto/pb_msg"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
-	pb_enum "lark/pkg/proto/pb_enum"
-	pb_msg "lark/pkg/proto/pb_msg"
 	reflect "reflect"
 	sync "sync"
 )
